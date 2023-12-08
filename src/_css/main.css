@@ -1,0 +1,101 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* ------ Add your CSS below this line (or @import your other CSS files). ------- */
+
+@import "_transitions.css";
+
+/* Default Color Scheme */
+:root {
+	--bg-default:hsla(0, 0%, 0%, 1);
+	--bg-muted:hsla(0, 0%, 15%, 1);
+	--bg-selection:hsla(0, 0%, 100%, 0.3);
+	--text-interactive:hsla(0, 0%, 100%, 1);
+	--text-default:hsla(0, 0%, 100%, 1);
+	--text-muted:hsla(0, 0%, 100%, 0.65);
+	--border-default:hsla(0, 0%, 100%, 0.3);
+	--border-muted:hsla(0, 0%, 100%, 0.1);
+}
+
+/* Style individual pages by redefining the color styles on the body tag for that page. 
+For example:		
+<body style="
+	--bg-default:rgba(85, 96, 75, 1);
+	--bg-muted:rgba(116, 127, 106, 1);
+	--text-default:rgba(238, 242, 203, 1);
+	--text-muted:rgba(238, 242, 203, 0.503);
+	--border-page:rgba(238, 242, 203, 0.095); ">
+
+*/
+.bg-default {background-color:var(--bg-default);}
+.bg-muted {background-color:var(--bg-muted);}
+.text-default {color:var(--text-default);}
+.text-muted {color:var(--text-muted);}
+.text-interactive {color:var(--text-interactive);}
+.border-default {border-color:var(--border-default);}
+.border-muted {border-color:var(--border-muted);}
+::selection {background-color:var(--bg-muted);}
+
+
+@font-face {
+  font-family: 'Antarctica';
+  src: url('../_fonts/Antarctica-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+	font-family: 'Tiempos';
+	src: url('../_fonts/TiemposHeadlineLight.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	}
+
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	@apply bg-default text-default sm:text-xl font-sans font-normal
+}
+
+a { color:var(--text-interactive); text-decoration:underline }
+
+h1 {
+	@apply font-display text-[28px] md:text-[72px] tracking-[-0.02em] leading-[1]
+}
+
+
+h2 {
+	@apply text-lg md:text-xl xl:text-3xl leading-tight font-medium tracking-[-0.02em] leading-tight
+}
+
+.project-content > img {
+	@apply w-full mb-2
+}
+
+.project-content > h2 {
+	@apply my-24
+}
+
+.col-narrow {
+	@apply sm:mx-72
+}
+
+.col-wide {
+	@apply w-full
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

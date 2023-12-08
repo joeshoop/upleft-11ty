@@ -1,0 +1,19 @@
+{% if size == "100vw" %}
+<img 
+	alt="{{alt}}"
+	srcset="
+		{{image}}_1440w.{{type}} 1440w,
+		{{image}}_2880w.{{type}} 2880w,
+		{{image}}_4320w.{{type}} 4320w"
+	sizes="{{size}}"
+	src="{{image}}_1440w.{{type}}" />
+{% else %}
+<img 
+	alt="{{alt}}"
+	srcset="
+		{{image}}_600w.{{type}} 600w,
+		{{image}}_1200w.{{type}} 1200w,
+		{{image}}_2400w.{{type}} 2400w"
+	sizes="(max-width: 640px) 80vw, 50vw"
+	src="{{image}}_600w.{{type}}" />
+{% endif %}

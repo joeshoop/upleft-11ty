@@ -1,0 +1,61 @@
+/* Transitions */
+
+.main {
+    width:100vw;
+    position:relative;
+  }
+  
+.main:first-of-type {
+      z-index: 10000;
+}
+
+/* .main.project {
+    z-index:10000;
+} */
+
+/* Enter */
+.transition-enter {
+  position:fixed;
+  height:100vh;
+  top:0;
+  opacity:0;
+  z-index:10000;
+}
+
+.transition-enter-active {
+  z-index:10000;
+  position:fixed;
+  top:0;
+  height:100vh;
+  -webkit-transition: opacity 300ms ease, transform 300ms ease;
+  transition: opacity 300ms ease, transform 300ms ease;
+  overflow-y: hidden;
+}
+
+.transition-enter-to {
+  opacity:1;
+  position:fixed;
+  height:100vh;
+}
+
+/* Leave */
+
+.transition-leave {
+  /* position:fixed; */
+  /* height:100vh; */
+  /* top:0; */
+  opacity:1;
+}
+
+.transition-leave-active {
+  /* position:fixed; */
+  /* height:100vh; */
+  opacity:1;
+  -webkit-transition: opacity 300ms ease, transform 300ms ease;
+  transition: opacity 300ms ease, transform 300ms ease;
+  overflow-y: hidden;
+}
+
+.transition-leave-to {
+  opacity:0;
+}

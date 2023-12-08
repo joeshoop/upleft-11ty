@@ -1,22 +1,44 @@
 ---
 layout: default
-title: "Hella Simple Eleventy + Tailwind CSS Starter"
-description: "This page has a freebie from Tailwind UI."
+title: "Index"
+description: "Studio Upleft"
+
+bg-default: "#202C19"
+bg-muted: "#151D11"
+text-default: "#E5EEE0"
+text-muted: "#90968C"
+text-interactive: "#E5EEE0"
+border-default: "#E5EEE0"
+border-muted: "rgba(255, 255, 255, .25)"
 ---
-<div class="bg-gray-50">
-  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:flex lg:items-center lg:justify-between lg:px-8 lg:py-16">
-    <h2 class="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-      <span class="block">Hella Simple</span>
-      <span class="block text-indigo-600">Eleventy + Tailwind CSS</span>
-    </h2>
-    <div class="mt-8 flex lg:mt-0 lg:flex-shrink-0">
-      <div class="inline-flex rounded-md shadow">
-        <a href="https://www.11ty.dev/" class="inline-flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white hover:bg-indigo-700">Eleventy</a>
-      </div>
-      <div class="ml-3 inline-flex rounded-md shadow">
-        <a href="https://tailwindcss.com/" class="inline-flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-50"> Tailwind CSS</a>
-      </div>
-    </div>
-  </div>
+<div class="min-h-[50vh] md:min-h-[40vh] flex border-b border-muted py-6 mb-4">
+  <h1 class="self-end">System-minded visual design and brand-friendly product design for your next project.</h1>
 </div>
-<p class="p-4 text-center"><a class="text-gray-700 hover:underline" href="https://github.com/huphtur/hella-simple-eleventy-tailwind-starter">View on GitHub</a></p>
+
+<p class="text-muted">Recent Work</p>
+<ul class="grid sm:grid-cols-2 gap-x-4 gap-y-16 mt-8">
+{%- for featured in collections.featured reversed -%}
+  <li>
+    <a href="{{ featured.url }}" class="no-underline hover:opacity-90">
+      <div class="aspect-video bg-cover bg-center" style="background-image: url('{{ featured.url }}{{ featured.data.image }}'); background-color: {{ featured.data.bg-default }};"></div>
+      <p class="leading-tight mt-4">{{ featured.data.title-short }}</p>
+      <p class="text-muted uppercase text-xs mt-1">{{ featured.data.role }}</p>
+    </a>
+  </li>
+{%- endfor -%}
+</ul>
+
+
+<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-2 sm:gap-x-4 gap-y-16 mt-16 sm:mt-24">
+{%- for work in collections.work reversed -%}
+  <li>
+    <a href="{{ work.url }}" class="no-underline hover:opacity-90">
+      <div class="aspect-square bg-cover bg-center mb-2" style="background-image: url('{{ work.url }}/{{ work.data.image }}'); background-color: {{ work.data.bg-default }};"></div>
+      <p class="leading-tight mt-4">{{ work.data.title-short }}</p>
+      <p class="text-muted uppercase text-xs mt-1">{{ work.data.role }}</p>
+    </a>
+  </li>
+{%- endfor -%}
+</ul>
+
+<h2 class="" >System-minded visual design and brand-friendly product design for your next project.</h2>
