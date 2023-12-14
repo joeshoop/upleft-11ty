@@ -9,9 +9,11 @@ module.exports = function (eleventyConfig) {
     for(let i = 0; i < coll.length ; i++) {
       const prevWork = coll[i-1];
       const nextWork = coll[i + 1];
+      const prevprevWork = coll[i - 2];
   
       coll[i].data["prevWork"] = prevWork;
       coll[i].data["nextWork"] = nextWork;
+      coll[i].data["prevprevWork"] = prevprevWork;
     }
   
     return coll;

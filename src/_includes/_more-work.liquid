@@ -1,0 +1,41 @@
+
+<div class="my-8 md:my-24 py-4 border-t border-muted">
+  <h2 class="mb-4">More work</h2>
+  <div class="grid grid-cols-2 gap-4">
+	<div class="">
+	  {% if nextWork.url %}
+		<a href="{{ nextWork.url }}" class="no-underline hover:opacity-90">
+		  <div class="aspect-square bg-cover bg-center" style="background-image: url('{{ nextWork.url }}{{ nextWork.data.image }}'); background-color: {{ nextWork.data.bg-default }};"></div>
+		  <p class="leading-tight mt-4">{{ nextWork.data.title-short }}</p>
+		  <p class="text-muted uppercase text-xs mt-1">{{ nextWork.data.role }}</p>
+		</a>
+	  {% else %}
+		<a href="{{ prevprevWork.url }}" class="no-underline hover:opacity-90">
+		  <div class="aspect-square bg-cover bg-center" style="background-image: url('{{ prevprevWork.url }}{{ prevprevWork.data.image }}'); background-color: {{ prevprevWork.data.bg-default }};"></div>
+		  <p class="leading-tight mt-4">{{ prevprevWork.data.title-short }}</p>
+		  <p class="text-muted uppercase text-xs mt-1">{{ prevprevWork.data.role }}</p>
+		</a>
+	  {% endif %}
+	</div>
+	<div class="">
+	  {% if prevWork.url %}
+		  <a href="{{ prevWork.url }}" class="no-underline hover:opacity-90">
+			<div class="aspect-square bg-cover bg-center" style="background-image: url('{{ prevWork.url }}{{ prevWork.data.image }}'); background-color: {{ prevWork.data.bg-default }};"></div>
+			<p class="leading-tight mt-4">{{ prevWork.data.title-short }}</p>
+			<p class="text-muted uppercase text-xs mt-1">{{ prevWork.data.role }}</p>
+		  </a>
+	  {% else %}
+	  
+		{%- for featured in collections.featured reversed -%}
+		  <a href="{{ featured.url }}" class="no-underline hover:opacity-90">
+			<div class="aspect-square bg-cover bg-center" style="background-image: url('{{ featured.url }}{{ featured.data.image }}'); background-color: {{ featured.data.bg-default }};"></div>
+			<p class="leading-tight mt-4">{{ featured.data.title-short }}</p>
+			<p class="text-muted uppercase text-xs mt-1">{{ featured.data.role }}</p>
+		  </a>
+		{% break %}
+	  {%- endfor -%}
+	  
+	  {% endif %}
+	</div>
+  </div>
+</div>

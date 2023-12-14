@@ -8,15 +8,4 @@ layout: default
   {{ content }}
 </div>
 
-{% if nextWork.url %}
-  <p class="ctr">
-    <strong>Next</strong>:
-    <a class="next" href="{{ nextWork.url }}">{{ nextWork.data.title }}</a>
-  </p>
-{% endif %}
-{% if prevWork.url %}
-  <p class="ctr">
-    <strong>Previous</strong>:
-    <a class="previous" href="{{ prevWork.url }}">{{ prevWork.data.title }}</a>
-  </p>
-{% endif %}
+{% include "_more-work" %}
