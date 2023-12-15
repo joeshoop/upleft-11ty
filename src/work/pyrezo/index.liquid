@@ -11,10 +11,10 @@ role: Visual, Brand, Product
 image: "pyrezo-intro@2x.jpg"
 
 bg-default: "#161A1D"
-bg-muted: "#353A40"
-text-default: "#D5FB6A"
-text-muted: "#B0AAAA"
-text-interactive: "#D5FB6A"
+bg-muted: "#24282B"
+text-default: "#B3ADAD"
+text-muted: "#7C7A7B"
+text-interactive: "#B3ADAD"
 border-default: "#D5FB6A"
 border-muted: "rgba(255, 255, 255, 0.2)"
 ---
@@ -42,17 +42,21 @@ border-muted: "rgba(255, 255, 255, 0.2)"
 </div>
 
 
-<div class="col-wide phone-grid">
-	<div>
-		<video class="w-full rounded-[10%/5%]" autoplay playsinline muted loop>
-			<source src="pyrezo-newcapture.mp4" type="video/mp4">Your browser does not support the video tag.
-		</video>
-		<!-- <img class="w-full" src="pyrezo-newcapture.png" /> -->
-		<p class="mt-2 text-sm text-muted">Start a new capture</p>
-	</div>
-	<div>
-		<img class="w-full rounded-[10%/5%]" src="pyrezo-editaddress.png" />
-		<p class="mt-2 text-sm text-muted">Edit address</p>
+<div class="col-wide bg-muted">
+	<div class="col-narrow">
+		<div class="phone-grid">
+			<div>
+				<video class="rounded-[10%/5%] border border-black/10 shadow" autoplay playsinline muted loop>
+					<source src="pyrezo-newcapture.mp4" type="video/mp4">Your browser does not support the video tag.
+				</video>
+				<!-- <img class="w-full" src="pyrezo-newcapture.png" /> -->
+				<p class="mt-2 text-sm text-muted">Start a new capture</p>
+			</div>
+			<div>
+				<img class="rounded-[10%/5%] border border-black/10 shadow" src="pyrezo-editaddress.png" />
+				<p class="mt-2 text-sm text-muted">Edit address</p>
+			</div>
+		</div>
 	</div>
 </div>
 
@@ -68,63 +72,77 @@ border-muted: "rgba(255, 255, 255, 0.2)"
 	<p class="text-sm text-muted">Images were also best if the phone was held in portrait orientation and was moving relatively slowly, depending on lighting.</p>
 </div> -->
 
-<div class="col-wide phone-grid">
-	<div class="">
-		<img class="w-full" src="pyrezo-guide.png" />
-		<p class="mt-2 text-muted text-sm">Confirming location, walking around the home...</p>
-	</div>
-	<div class="">
-		<video class="w-full rounded-[10%/5%]" autoplay playsinline muted loop>
-			<source src="pyrezo-spin.mp4" type="video/mp4">Your browser does not support the video tag.
-		</video>
-		<p class="mt-2 text-sm text-muted">...stopping to capture a 360º image at each corner...</p>
-	</div>
-</div>
-
-<div class="col-wide phone-grid">
-	<div class="">
-		<img class="w-full" src="pyrezo-returntoportrait.png" />
-		<p class="text-center text-sm text-muted">...keeping the phone upright...</p>
-	</div>
-
-	<div class="">
-		<img class="w-full" src="pyrezo-photos.png" />
-		<p class="mt-2 text-sm text-muted">...and taking photos of a few specific materials.</p>
+<div class="col-wide mt-4 bg-muted">
+	<div class="col-narrow">
+		<div class="phone-grid">
+			<div class="">
+				<img class="w-full rounded-[10%/5%] border border-black/10 shadow" src="pyrezo-guide.png" />
+				<p class="mt-2 text-muted text-sm">Confirming location, walking around the home...</p>
+			</div>
+			<div class="">
+				<video class="w-full rounded-[10%/5%] border border-black/10 shadow" autoplay playsinline muted loop>
+					<source src="pyrezo-spin.mp4" type="video/mp4">Your browser does not support the video tag.
+				</video>
+				<p class="mt-2 text-sm text-muted">...stopping to capture a 360º image at each corner...</p>
+			</div>
+		</div>
 	</div>
 </div>
 
+<div class="col-wide mt-4 bg-muted overflow-hidden">
+	<div class="col-narrow">
+		<div class="phone-grid">
+			<div class="mx-[-40%] sm:mx-[-60%]">
+				<img class="w-full rounded-[10%/5%]"  src="pyrezo-returntoportrait.png" />
+				<p class="text-center text-sm text-muted">...keeping the phone upright...</p>
+			</div>
+		
+			<div class="">
+				<img class="w-full rounded-[10%/5%] border border-black/10 shadow" src="pyrezo-photos.png" />
+				<p class="mt-2 text-sm text-muted">...and taking photos of a few specific materials.</p>
+			</div>
+		</div>
+	</div>
+</div>
 <!-- <div class="col-start-1 col-span-12 sm:col-start-3 sm:col-span-4 xl:col-start-4 xl:col-span-3">
 	<p class="mb-2 text-sm text-muted">
 		Until risk detection can happen on device, images need to be uploaded to the cloud so that a small team at Pyrezo can manually mark them up, training an AI to recognize wildfire risk conditions in captured images.
 	</p>
 </div> -->
-<div class="col-span-12">
-	<img class="w-full" src="pyrezo-app-finishandupload@2x.jpg" />
+<div class="col-wide mt-4">
+	{% include "_project-image" alt: "Screenshots showing finish capture and upload images" image: "pyrezo-app-finishandupload" type: "jpg" size: "100vw" %}
 </div>
 
-<div class="col-wide phone-grid">
-	<div class="mx-auto">
-		<!-- <img class="col-span-12" src="pyrezo-annotate-1@2x.png" /> -->
-		<video class="w-full" autoplay playsinline muted loop>
-			<source src="pyrezo-annotate.mp4" type="video/mp4">Your browser does not support the video tag.
-		</video>
+<div class="col-wide mt-4 bg-muted">
+	<div class="w-full max-w-[1080px] py-16 px-4 mx-auto">
+
+			<div class="">
+				<!-- <img class="col-span-12" src="pyrezo-annotate-1@2x.png" /> -->
+				<video class="w-full" autoplay playsinline muted loop>
+					<source src="pyrezo-annotate.mp4" type="video/mp4">Your browser does not support the video tag.
+				</video>
+			</div>
 	</div>
 </div>
 
 <div class="col-narrow my-24">
 	<h2>
-		The images are uploaded and a small team at Pyrezo notes fire risk conditions found in the photos, training an AI to recognize wildfire risk.
+		When the images are uploaded, a small team at Pyrezo notes fire risk conditions found at the property.
 	</h2>
 	<h2 class="mt-4">
-		After a short wait, users receive a report with details on every potential fire hazard found in the images of their property.
+		After a short wait, users receive a report with details on each potential fire hazard.
 	</h2>
 </div>
 
-<div class="col-wide grid grid-cols-2 bg-muted gap-4 p-8 md:gap-16 md:p-24">
-		<img class="w-full" src="pyrezo-report-summary@2x.png" />
-		<img class="w-full" src="pyrezo-report-p1@2x.png" />
-		<img class="w-full" src="pyrezo-report-p2@2x.png" />
-		<img class="w-full" src="pyrezo-report-p3@2x.png" />
+<div class="col-wide">
+	<div class="col-narrow">
+		<div class="grid grid-cols-2 gap-4">
+			<img class="w-full" src="pyrezo-report-summary@2x.png" />
+			<img class="w-full" src="pyrezo-report-p1@2x.png" />
+			<img class="w-full" src="pyrezo-report-p2@2x.png" />
+			<img class="w-full" src="pyrezo-report-p3@2x.png" />
+		</div>
+	</div>
 </div>
 
 <div class="col-wide mt-4">

@@ -79,7 +79,7 @@ h2 {
 }
 
 .col-narrow {
-	@apply sm:mx-24 md:mx-32 xl:mx-72
+	@apply sm:mx-[10%] md:mx-[20%] xl:mx-[25%]
 }
 
 .col-wide {
@@ -87,7 +87,7 @@ h2 {
 }
 
 .phone-grid {
-	@apply grid grid-cols-1 md:grid-cols-2 gap-12 p-12 my-8 bg-muted
+	@apply grid sm:grid-cols-2 gap-[10vw] py-12 sm:py-24 px-[10%] sm:px-0
 }
 
 .hero { 
