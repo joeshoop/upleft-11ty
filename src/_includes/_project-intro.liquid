@@ -1,7 +1,9 @@
 <div class="hero">
-	<p class="text-lg md:text-2xl xl:text-4xl leading-tight font-medium">{{ title-long }}</p>
+	<h1>{{ client }}</h1>
+	<!-- <p class="text-lg md:text-2xl xl:text-4xl leading-tight font-medium">{{ title-long }}</p> -->
+	<p class="">{{ title-long }}</p>
 </div>
 <div class="text-muted flex justify-between w-full pb-2 md:pb-4">
-	<p>{{ role }}</p>
+	<p><span>Role:</span> {{ role }}</p>
 	<p>{{ date | date: "%Y" }}</p>
 </div>
