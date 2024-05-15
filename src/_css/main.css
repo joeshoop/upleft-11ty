@@ -91,11 +91,39 @@ h2 {
 }
 
 .hero { 
-	@apply min-h-[50vh] md:min-h-[40vh] border-b border-muted flex flex-col justify-end py-2 mb-2 md:py-6 md:mb-4;
+	@apply min-h-[50vh] md:min-h-[40vh] border-b border-muted flex flex-col justify-end py-2 mb-2 md:py-6 md:mb-4
 }
 
+.mobile-slide {
+  display:flex;
+  flex-wrap: nowrap;
+  overflow-x:scroll;
+  width:100%;
+  -webkit-overflow-scrolling: touch;
+}
 
+.col-wide.mobile-slide img {
+  width:initial;
+  max-width:initial;
+  align-self:center;
+  flex-shrink:0;
+  width:220vw;
+  height:100%;
+}
 
+@media (min-width: 640px) {
+  .mobile-slide {
+	display:block;
+	width:auto;
+	overflow-x: initial;
+  }
+  
+  .col-wide.mobile-slide img {
+	display:block;
+	width:100%;
+	height:auto;
+  }
+}
 
 
 

@@ -1,5 +1,5 @@
 {% if size == "100vw" %}
-<img 
+<img class="w-full"
 	alt="{{alt}}"
 	srcset="
 		{{image}}_1440w.{{type}} 1440w,
@@ -8,7 +8,7 @@
 	sizes="{{size}}"
 	src="{{image}}_1440w.{{type}}" />
 {% else %}
-<img 
+<img class="w-full"
 	alt="{{alt}}"
 	srcset="
 		{{image}}_600w.{{type}} 600w,
