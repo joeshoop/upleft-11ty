@@ -2,18 +2,17 @@
 layout: default
 title: "Index"
 description: "Studio Upleft"
-slug: "test"
 ---
 <ul class="featured-items">
   {%- for featured in collections.featured reversed -%}
   <li class="featured-item">
-    <div class="width-max">
+    <div class="content">
       <h2>{{ featured.data.client }}</h2>
-      <p>
-        <span>{{ featured.data.challenge }}</span>
+      <p class="text-lg">
+        <span class="text-muted">{{ featured.data.challenge }}</span>
         <span>{{ featured.data.impact }}</span>
       </p>
-      <p class="text-muted">{{ featured.data.role }}</p>
+      <p class="label">{{ featured.data.role }}</p>
     </div>
     <a href="{{ featured.url }}">
       <div class="thumbnail" style="background-image: url('{{ featured.url }}{{ featured.data.image }}'); background-color: {{ featured.data.bg-default }};"></div>
@@ -28,7 +27,7 @@ slug: "test"
   <li class="published-item">
     <a href="{{ published.url }}" class="">
       <div class="thumbnail" style="background-image: url('{{ published.url }}/{{ published.data.image }}'); background-color: {{ published.data.bg-default }};"></div>
-      <p class="title">{{ published.data.title-short }}</p>
+      <h2>{{ published.data.title-short }}</h2>
       <p class="label">{{ published.data.role }}</p>
     </a>
   </li>

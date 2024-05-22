@@ -7,20 +7,17 @@
   <meta name="description" content="{% if description %}{{ description }}{% else %}A digital product design studio in Seattle{% endif %}" />
   <title>{% if title %}{{ title }}—Studio Upleft{% else %}Studio Upleft{% endif %}</title>
   <link rel="stylesheet" href="/_css/main.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 </head>
 
 <body id="page-{{slug | default: "default"}}" class="text-default bg-default">
-
-  <div class="width-max">
-    <h1>Studio Upleft</h1>
-    <p>I am a designer in Seattle</p>
-  </div>
 
   {% include "_nav" %}
 
   {{ content }}
 
   {% include "_footer" %}
+  
 </body>
 
 </html>

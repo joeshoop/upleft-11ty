@@ -1,16 +1,16 @@
 /* Default Color Scheme */
 :root {
-	--bg-strong: hsla(0, 0%, 100%, 1);
-	--bg-default: hsla(49, 14%, 94%, 1);
+	--bg-strong: hsla(360, 27%, 4%, 1);
+	--bg-default: hsla(234, 8%, 11%, 1);
 	--bg-muted: hsla(49, 14%, 89%, 1);
 	--bg-selection: hsla(0, 0%, 100%, 0.3);
-	--text-strong: hsla(0, 0%, 0%, 1);
-	--text-default: hsla(0, 10%, 20%, 1);
-	--text-muted: hsla(360, 7%, 49%, 1);
+	--text-strong: hsla(0, 0%, 100%, 1);
+	--text-default: hsla(0, 5%, 80%, 1);
+	--text-muted: hsla(0, 5%, 55%, 1);
 	--text-interactive: var(--text-strong);
 	--border-strong: var(--text-strong);
-	--border-default: hsla(0, 10%, 0%, 0.3);
-	--border-muted: hsla(0, 10%, 0%, 0.1);
+	--border-default: hsla(0, 0%, 100%, 0.3);
+	--border-muted: hsla(0, 0%, 100%, 0.1);
 	--font-sans: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 	--font-serif: 'Times New Roman', sans-serif;
 
@@ -138,7 +138,8 @@ body {
 	color: var(--text-default);
 	font-family: var(--font-sans);
 	font-weight: normal;
-	font-size: var(--font-size);
+	font-size: var(--font-md);
+	padding:var(--spacing-md);
 }
 
 a {
@@ -147,11 +148,12 @@ a {
 }
 
 h1 {
-	font-size: var(--font-lg);
+	font-size: var(--font-md);
 	color: var(--text-default);
 	font-weight: 400;
 	line-height: 110%;
-	margin: var(--spacing-md) 0;
+	max-width:var(--spacing-width-max);
+	margin: var(--spacing-md) auto;
 }
 
 h2 {
@@ -159,7 +161,17 @@ h2 {
 	color: var(--text-muted);
 	font-weight: 400;
 	line-height: 110%;
-	margin: var(--spacing-md) 0;
+	max-width:var(--spacing-width-max);
+	margin: var(--spacing-sm) auto;
+}
+
+h3 {
+	font-size: var(--font-md);
+	color: var(--text-muted);
+	font-weight: 400;
+	line-height: 110%;
+	max-width:var(--spacing-width-max);
+	margin: 0 auto;
 }
 
 p {
@@ -167,11 +179,7 @@ p {
 }
 
 p+p {
-	margin-top: 1em;
-}
-
-.rounded {
-	border-radius: 3em;
+	margin-top: var(--spacing-sm);
 }
 
 .text-lg {
@@ -192,6 +200,7 @@ p+p {
 	background-size: cover;
 	background-position: center;
 	aspect-ratio: 6 / 4;
+	border-radius:var(--spacing-sm)
 }
 
 
@@ -209,7 +218,7 @@ nav,
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	gap: 1em;
+	gap: var(--spacing-sm);
 }
 
 .nav-item {
@@ -224,45 +233,21 @@ nav,
 
 .nav-item-content {
 	display: inline-block;
-	padding: 1em 0;
+	padding: var(--spacing-sm) 0;
 	text-decoration: none;
 }
 
 a.nav-item-content:hover {
 	border-bottom: 1px solid var(--border-strong);
+	color:var(--text-strong);
 	margin-bottom: -1px;
 }
 
 /* Layout */
 
-.grid {
-	display: grid;
-	gap: 2em 1em;
-}
-
-.grid-cols-2 {
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-4 {
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.col-narrow {
-	width: 25%;
-}
-
-.col-wide {
-	width: 100%;
-}
-
-.w-full {
-	width: 100%;
-}
-
 .intro {
 	width: var(--spacing-width-max);
-	margin: 0 auto;
+	margin: var(--spacing-sm) auto;
 }
 
 .hero {
@@ -275,33 +260,42 @@ a.nav-item-content:hover {
 }
 
 .featured-items {
-	width: var(--spacing-width-xl);
+	max-width: var(--spacing-width-xl);
 	margin: 0 auto;
-	margin-bottom: 2em;
 	list-style-type: none;
+}
+
+.featured-item {
+	margin: var(--spacing-xl) auto;
 }
 
 .featured-item a {
 	text-decoration: none;
 }
 
-.featured-item-info {
-	color: var(--text-default);
+
+.content {
+	max-width: var(--spacing-width-max);
+	margin:0 auto;
+	padding-bottom:var(--spacing-md);
 }
 
-
-.featured-item #title {
-	color: var(--text-default);
-}
-
-.featured-item #label {
+.label {
 	color: var(--text-muted);
 }
 
+
 .published-items {
-	width: var(--spacing-width-xl);
+	max-width: var(--spacing-width-xl);
 	margin: 0 auto;
 	display: grid;
 	gap: 2em 1em;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+footer {
+	border-top:1px solid var(--border-muted);
+	padding-top:var(--spacing-md);
+	max-width: var(--spacing-width-max);
+	margin:var(--spacing-xl) auto;
 }

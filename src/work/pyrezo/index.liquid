@@ -20,80 +20,30 @@ border-default: "#D5FB6A"
 border-muted: "rgba(255, 255, 255, 0.2)"
 ---
 
-<div class="width-xl">
-	{% include "_project-image" alt: "Two phones float above a spread of food" image: "pyrezo-intro" type: "jpg" size: "100vw" %}
-</div>
-<div class="width-xl mt-4">
-	{% include "_project-image" alt: "Two phones float above a spread of food" image: "pyrezo-identity" type: "jpg" size: "100vw" %}
-</div>
-<div class="width-xl mt-4">
-	{% include "_project-image" alt: "Two phones float above a spread of food" image: "pyrezo-styleguide" type: "jpg" size: "100vw" %}
-</div>
-<div class="width-xl mt-4">
-	{% include "_project-image" alt: "Two phones float above a spread of food" image: "pyrezo-website" type: "jpg" size: "100vw" %}
-</div>
 
-<div class="col-narrow my-24">
+	{% include "_project-image" alt: "Two phones float above a spread of food" image: "pyrezo-intro" type: "jpg" size: "100vw" %}
+
+	{% include "_project-image" alt: "Two phones float above a spread of food" image: "pyrezo-identity" type: "jpg" size: "100vw" %}
+
+	{% include "_project-image" alt: "Two phones float above a spread of food" image: "pyrezo-styleguide" type: "jpg" size: "100vw" %}
+
+	{% include "_project-image" alt: "Two phones float above a spread of food" image: "pyrezo-website" type: "jpg" size: "100vw" %}
+
 	<h2>
 		To really understand fire risk around a structure, you need to see what is happening at ground level. Aerial photography can reveal some problems, but misses the biggest risks hidden under canopies and eaves.
 	</h2>
 	<h2 class="mt-8">
 		Pyrezo’s iPhone app gets the picture on what is happening from the ground up.
 	</h2>
-</div>
-
-
-<div class="width-xl bg-muted">
-	<div class="col-narrow">
-		<div class="phone-grid">
-			<div>
-				<video class="rounded-[10%/5%] border border-black/10 shadow" autoplay playsinline muted loop>
-					<source src="pyrezo-newcapture.mp4" type="video/mp4">Your browser does not support the video tag.
-				</video>
-				<!-- <img class="w-full" src="pyrezo-newcapture.png" /> -->
-				<p class="mt-2 text-sm text-muted">Start a new capture</p>
-			</div>
-			<div>
-				<img class="rounded-[10%/5%] border border-black/10 shadow" src="pyrezo-editaddress.png" />
-				<p class="mt-2 text-sm text-muted">Edit address</p>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<!-- <div class="col-start-1 col-span-12 sm:col-start-3 sm:col-span-4 xl:col-start-4 xl:col-span-3 mt-32">
-	<p class="mb-2 text-sm text-muted">In early testing, it became clear that captures were best if taken in portrait mode with the 0.5x lens. The wide angle in this lens reveals a lot more detail in the top and bottom of the image, highlighting open vents, dry leaves, and flammable branches and bushes.</p>
-</div>
-<div class="col-start-1 col-span-6 sm:col-start-3 sm:col-span-4 xl:col-start-4 xl:col-span-3 aspect-video bg-red-500">
-</div>
-<div class="col-start-7 col-span-6 sm:col-start-7 sm:col-span-4 xl:col-start-7 xl:col-span-3 aspect-video bg-red-500">
-</div>
-<div class="col-start-1 col-span-12 sm:col-start-3 sm:col-span-4 xl:col-start-4 xl:col-span-3 pt-2">
-	<p class="text-sm text-muted">Images were also best if the phone was held in portrait orientation and was moving relatively slowly, depending on lighting.</p>
-</div> -->
-
-<div class="width-xl mt-4 bg-muted">
-	<div class="col-narrow">
-		<div class="phone-grid">
-			<div class="">
 				<img class="w-full rounded-[10%/5%] border border-black/10 shadow" src="pyrezo-guide.png" />
 				<p class="mt-2 text-muted text-sm">Confirming location, walking around the home...</p>
-			</div>
+
 			<div class="">
 				<video class="w-full rounded-[10%/5%] border border-black/10 shadow" autoplay playsinline muted loop>
 					<source src="pyrezo-spin.mp4" type="video/mp4">Your browser does not support the video tag.
 				</video>
 				<p class="mt-2 text-sm text-muted">...stopping to capture a 360º image at each corner...</p>
 			</div>
-		</div>
-	</div>
-</div>
-
-<div class="width-xl mt-4 bg-muted overflow-hidden">
-	<div class="col-narrow">
-		<div class="phone-grid">
-			<div class="mx-[-40%] sm:mx-[-60%]">
 				<img class="w-full rounded-[10%/5%]"  src="pyrezo-returntoportrait.png" />
 				<p class="text-center text-sm text-muted">...keeping the phone upright...</p>
 			</div>
@@ -102,9 +52,6 @@ border-muted: "rgba(255, 255, 255, 0.2)"
 				<img class="w-full rounded-[10%/5%] border border-black/10 shadow" src="pyrezo-photos.png" />
 				<p class="mt-2 text-sm text-muted">...and taking photos of a few specific materials.</p>
 			</div>
-		</div>
-	</div>
-</div>
 <!-- <div class="col-start-1 col-span-12 sm:col-start-3 sm:col-span-4 xl:col-start-4 xl:col-span-3">
 	<p class="mb-2 text-sm text-muted">
 		Until risk detection can happen on device, images need to be uploaded to the cloud so that a small team at Pyrezo can manually mark them up, training an AI to recognize wildfire risk conditions in captured images.
