@@ -8,7 +8,7 @@ description: "Studio Upleft"
   <li class="featured-item">
     <div class="content">
       <h2>{{ featured.data.client }}</h2>
-      <p class="text-lg">
+      <p class="title">
         <span class="text-muted">{{ featured.data.challenge }}</span>
         <span>{{ featured.data.impact }}</span>
       </p>
@@ -21,14 +21,17 @@ description: "Studio Upleft"
   {%- endfor -%}
 </ul>
 
+<hr />
 
 <ul class="published-items">
   {%- for published in collections.published reversed -%}
   <li class="published-item">
     <a href="{{ published.url }}" class="">
       <div class="thumbnail" style="background-image: url('{{ published.url }}/{{ published.data.image }}'); background-color: {{ published.data.bg-default }};"></div>
-      <h2>{{ published.data.title-short }}</h2>
-      <p class="label">{{ published.data.role }}</p>
+      <div class="content">
+        <p class="title">{{ published.data.title }}</p>
+        <p class="label">{{ published.data.role }}</p>
+      </div>
     </a>
   </li>
   {%- endfor -%}
