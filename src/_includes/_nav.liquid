@@ -1,21 +1,21 @@
-<nav class="border-b border-muted">
-	<ul class="flex justify-between w-full">
+<nav>
+	<ul class="nav-items">
 	{% if title == "Index" %}
-		<li class="border-b pb-2 sm:pb-4 mb-[-1px]">
-			<span class="pb-2 sm:pb-4">Studio Upleft</span>
+		<li class="nav-item active">
+			<a class="nav-item-content" id="nav-home" href="/">Work</a>
 		</li>
 	{% else %}
-		<li class="mb-[-1px] hover:border-b border-default">
-			<a class="text-interactive no-underline pb-2 sm:pb-4" id="nav-home" href="/">← Index</a>
+		<li class="nav-item">
+			<a class="nav-item-content text-muted" id="nav-home" href="/">Work</a>
 		</li>
 	{% endif %}
 	{% if title == "About" %}
-		<li class="border-b mb-[-1px] border-default">
-			<a class="block text-interactive no-underline pb-2 sm:pb-4" id="nav-about" href="/about/">About</a>
+		<li class="nav-item active">
+			<a class="nav-item-content" id="nav-about" href="/about/">About</a>
 		</li>
 	{% else %}
-		<li class="hover:mb-[-1px] hover:border-b border-default">
-			<a class="block text-interactive no-underline pb-2 sm:pb-4" id="nav-about" href="/about/">About</a>
+		<li class="nav-item">
+			<a class="nav-item-content text-muted" id="nav-about" href="/about/">About</a>
 		</li>
 	{% endif %}
 	</ul>

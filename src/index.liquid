@@ -2,42 +2,35 @@
 layout: default
 title: "Index"
 description: "Studio Upleft"
-
-bg-default: "#202C19"
-bg-muted: "#151D11"
-text-default: "#E5EEE0"
-text-muted: "#A1B69A"
-text-interactive: "#E5EEE0"
-border-default: "#E5EEE0"
-border-muted: "rgba(255, 255, 255, .25)"
+slug: "test"
 ---
-<div class="hero">
-  <h1 class="self-end mb-2">System-minded visual design and brand-friendly product design for your next project.</h1>
-</div>
-<div class="pb-2 md:pb-4">
-  <p class="text-muted">Recent Work</p>
-</div>
-<ul class="grid sm:grid-cols-2 gap-x-4 gap-y-8 md:gap-y-12">
-{%- for featured in collections.featured reversed -%}
-  <li>
-    <a href="{{ featured.url }}" class="no-underline hover:opacity-90">
-      <div class="aspect-video bg-cover bg-center" style="background-image: url('{{ featured.url }}{{ featured.data.image }}'); background-color: {{ featured.data.bg-default }};"></div>
-      <p class="leading-tight mt-4">{{ featured.data.title-short }}</p>
-      <p class="text-muted uppercase text-xs mt-1">{{ featured.data.role }}</p>
+<ul class="featured-items">
+  {%- for featured in collections.featured reversed -%}
+  <li class="featured-item">
+    <div class="width-max">
+      <h2>{{ featured.data.client }}</h2>
+      <p>
+        <span>{{ featured.data.challenge }}</span>
+        <span>{{ featured.data.impact }}</span>
+      </p>
+      <p class="text-muted">{{ featured.data.role }}</p>
+    </div>
+    <a href="{{ featured.url }}">
+      <div class="thumbnail" style="background-image: url('{{ featured.url }}{{ featured.data.image }}'); background-color: {{ featured.data.bg-default }};"></div>
     </a>
   </li>
-{%- endfor -%}
+  {%- endfor -%}
 </ul>
 
 
-<ul class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-2 sm:gap-x-4 gap-y-8 md:gap-y-12 mt-12 sm:mt-16">
-{%- for published in collections.published reversed -%}
-  <li>
-    <a href="{{ published.url }}" class="no-underline hover:opacity-90">
-      <div class="aspect-square bg-cover bg-center mb-2" style="background-image: url('{{ published.url }}/{{ published.data.image }}'); background-color: {{ published.data.bg-default }};"></div>
-      <p class="leading-tight mt-4">{{ published.data.title-short }}</p>
-      <p class="text-muted uppercase text-xs mt-1">{{ published.data.role }}</p>
+<ul class="published-items">
+  {%- for published in collections.published reversed -%}
+  <li class="published-item">
+    <a href="{{ published.url }}" class="">
+      <div class="thumbnail" style="background-image: url('{{ published.url }}/{{ published.data.image }}'); background-color: {{ published.data.bg-default }};"></div>
+      <p class="title">{{ published.data.title-short }}</p>
+      <p class="label">{{ published.data.role }}</p>
     </a>
   </li>
-{%- endfor -%}
+  {%- endfor -%}
 </ul>
