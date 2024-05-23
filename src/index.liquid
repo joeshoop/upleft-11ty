@@ -15,26 +15,13 @@ description: "Studio Upleft"
       <p class="label">{{ featured.data.role }}</p>
     </div>
     <div class="pswp-gallery" id="gallery">
-      <!-- <div class="pswp-gallery__item">
-        <a href="{{ featured.url }}{{ featured.data.image }}" data-pswp-width="1200" data-pswp-height="800" target="_blank">
-          <img class="thumbnail" src="{{ featured.url }}{{ featured.data.image }}" alt="{{ featured.data.title }}">
-        </a>
-      </div> -->
+      {%- for image in featured.data.images -%}
       <div class="pswp-gallery__item">
-        <a href="https://picsum.photos/1200/800" data-pswp-width="1200" data-pswp-height="800" target="_blank">
-          <img class="thumbnail" src="https://picsum.photos/1200/800" alt="{{ featured.data.title }}">
+        <a href="{{ featured.url }}{{ image.src }}" data-pswp-width="1200" data-pswp-height="800" target="_blank">
+          <img class="thumbnail" src="{{ featured.url }}{{ image.src }}" alt="{{ image.caption }}">
         </a>
       </div>
-      <div class="pswp-gallery__item">
-        <a href="https://picsum.photos/1200/800" data-pswp-width="1200" data-pswp-height="800" target="_blank">
-          <img class="thumbnail" src="https://picsum.photos/1200/800" alt="{{ featured.data.title }}">
-        </a>
-      </div>
-      <div class="pswp-gallery__item">
-        <a href="https://picsum.photos/1200/800" data-pswp-width="1200" data-pswp-height="800" target="_blank">
-          <img class="thumbnail" src="https://picsum.photos/1200/800" alt="">
-        </a>
-      </div>
+      {%- endfor -%}
   </li>
   {%- endfor -%}
 </ul>
