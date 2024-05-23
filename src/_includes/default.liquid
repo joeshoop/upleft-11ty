@@ -7,7 +7,8 @@
   <meta name="description" content="{% if description %}{{ description }}{% else %}A digital product design studio in Seattle{% endif %}" />
   <title>{% if title %}{{ title }}—Studio Upleft{% else %}Studio Upleft{% endif %}</title>
   <link rel="stylesheet" href="/_css/main.css" />
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <link rel="stylesheet" href="/_css/photoswipe.css">
+  <link rel="stylesheet" href="https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css">
 </head>
 
 <body id="page-{{slug | default: "default"}}" class="text-default bg-default">
@@ -17,7 +18,42 @@
   {{ content }}
 
   {% include "_footer" %}
-  
+
 </body>
+<script type="module">
+  import PhotoSwipeLightbox from './_js/photoswipe-lightbox.esm.min.js';
+  import PhotoSwipeDynamicCaption from './_js/photoswipe-dynamic-caption-plugin.esm.min.js';
+
+  const smallScreenPadding = {
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0
+  };
+  const largeScreenPadding = {
+    top: 30,
+    bottom: 30,
+    left: 0,
+    right: 0
+  };
+  const lightbox = new PhotoSwipeLightbox({
+    gallerySelector: '#gallery',
+    childSelector: '.pswp-gallery__item',
+
+    // optionaly adjust viewport
+    paddingFn: (viewportSize) => {
+      return viewportSize.x < 700 ? smallScreenPadding : largeScreenPadding
+    },
+    pswpModule: () => import('./_js/photoswipe.esm.min.js')
+  });
+
+  const captionPlugin = new PhotoSwipeDynamicCaption(lightbox, {
+    mobileLayoutBreakpoint: 700,
+    type: 'auto',
+    mobileCaptionOverlapRatio: 1
+  });
+
+  lightbox.init();
+</script>
 
 </html>

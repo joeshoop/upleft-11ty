@@ -1,8 +1,8 @@
 /* Default Color Scheme */
 :root {
-	--bg-strong: hsla(360, 27%, 4%, 1);
-	--bg-default: hsla(234, 8%, 11%, 1);
-	--bg-muted: hsla(49, 14%, 89%, 1);
+	--bg-strong: hsla(20, 0%, 0%, 1);
+	--bg-default: hsla(20, 20%, 8%, 1);
+	--bg-muted: hsla(20, 14%, 89%, 1);
 	--bg-selection: hsla(0, 0%, 100%, 0.3);
 	--text-strong: hsla(0, 0%, 100%, 1);
 	--text-default: hsla(70, 3%, 87%, 1);
@@ -14,11 +14,12 @@
 	--font-sans: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
 	--font-serif: 'Times New Roman', sans-serif;
 
-	--font-lg: 24px;
+	--font-lg: clamp(18px, 1vw + 1rem, 26px);
 	--font-md: 16px;
 	--font-sm: 14px;
 	--font-size-serif: 18px;
 	--spacing: 1.5em;
+	--spacing-xs: calc(0.25 * var(--spacing));
 	--spacing-sm: calc(0.5 * var(--spacing));
 	--spacing-md: var(--spacing);
 	--spacing-lg: calc(1.5 * var(--spacing));
@@ -129,6 +130,9 @@
 	background-color: var(--border-muted);
 }
 
+html {
+	background-color: var(--bg-strong);
+}
 
 body {
 	text-rendering: optimizeLegibility;
@@ -140,6 +144,7 @@ body {
 	font-weight: normal;
 	font-size: var(--font-md);
 	padding: var(--spacing-md);
+	min-height: 100vh;
 }
 
 a {
@@ -151,6 +156,10 @@ hr {
 	max-width: var(--spacing-width-max);
 	margin: var(--spacing-xl) auto;
 	border: 1px solid var(--border-muted);
+}
+
+img {
+	max-width: 100%;
 }
 
 h1 {
@@ -210,7 +219,18 @@ p+p {
 	background-size: cover;
 	background-position: center;
 	aspect-ratio: 6 / 4;
-	border-radius: var(--spacing-sm)
+	transition: all cubic-bezier(.17, .67, .83, .67) 200ms;
+
+	box-shadow: 0px 16px 12px -16px rgba(0, 0, 0, 1);
+	-webkit-box-shadow: 0px 12px 16px -16px rgba(0, 0, 0, 1);
+	-moz-box-shadow: 0px 16px 12px -16px rgba(0, 0, 0, 1);
+}
+
+.thumbnail:hover {
+	box-shadow: 0px 24px 40px -24px rgba(0, 0, 0, 0.8);
+	-webkit-box-shadow: 0px 24px 40px -24px rgba(0, 0, 0, 0.8);
+	-moz-box-shadow: 0px 24px 40px -24px rgba(0, 0, 0, 0.8);
+	transform: translateY(calc(-1 * var(--spacing-xs)));
 }
 
 
@@ -218,7 +238,7 @@ p+p {
 
 nav,
 .nav {
-	width: var(--spacing-width-max);
+	max-width: var(--spacing-width-max);
 	margin: 0 auto;
 	border-bottom: 1px solid var(--border-muted);
 }
@@ -257,7 +277,7 @@ nav,
 
 
 .intro {
-	width: var(--spacing-width-max);
+	max-width: var(--spacing-width-max);
 	margin: var(--spacing-sm) auto;
 }
 

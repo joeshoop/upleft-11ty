@@ -1,21 +1,21 @@
-module.exports = function (eleventyConfig) {
+module.exports = function(eleventyConfig) {
   eleventyConfig.setServerOptions({
     watch: ['_site/**/*.css'],
   });
-  
+
   eleventyConfig.addCollection("work", function(collection) {
     const coll = collection.getFilteredByTag("work");
-  
-    for(let i = 0; i < coll.length ; i++) {
-      const prevWork = coll[i-1];
+
+    for (let i = 0; i < coll.length; i++) {
+      const prevWork = coll[i - 1];
       const nextWork = coll[i + 1];
       const prevprevWork = coll[i - 2];
-  
+
       coll[i].data["prevWork"] = prevWork;
       coll[i].data["nextWork"] = nextWork;
       coll[i].data["prevprevWork"] = prevprevWork;
     }
-  
+
     return coll;
   });
 
@@ -31,7 +31,8 @@ module.exports = function (eleventyConfig) {
       "png",
       "svg",
       "mp4",
-      "css" // css is not yet a recognized template extension in Eleventy
+      "css",
+      "js" // css is not yet a recognized template extension in Eleventy
     ]
   };
 };
