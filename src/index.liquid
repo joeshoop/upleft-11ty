@@ -6,17 +6,17 @@ description: "Upleft"
 <ul class="featured-items flow">
   {%- for featured in collections.featured reversed -%}
   <li class="featured-item">
-    <div class="container-md flow pt-xl pb-md">
+    <div class="flow container --w-md --pt-xl --pb-md">
       <div>
         <h2>{{ featured.data.client }}</h2>
-        <p class="title text-lg">
-          <span class="text-muted">{{ featured.data.challenge }}</span>
+        <p class="--text-lg">
+          <span class="--text-muted">{{ featured.data.challenge }}</span>
           <span>{{ featured.data.impact }}</span>
         </p>
-        <p class="text-muted">{{ featured.data.role }}</p>
+        <p class="--text-muted">{{ featured.data.role }}</p>
       </div>
     </div>
-    <div class="container-xl pswp-gallery" id="gallery">
+    <div class="pswp-gallery container --w-xl" id="gallery">
       {%- for image in featured.data.images -%}
       <div class="pswp-gallery__item">
         <a href="{{ featured.url }}{{ image.src }}" data-pswp-width="1200" data-pswp-height="800" target="_blank">
@@ -35,9 +35,9 @@ description: "Upleft"
   <li class="published-item">
     <a href="{{ published.url }}">
       <div class="thumbnail" style="background-image: url('{{ published.url }}/{{ published.data.image }}'); background-color: {{ published.data.bg-default }};"></div>
-      <div class="pt-sm">
-        <p class="title">{{ published.data.title }}</p>
-        <p class="label">{{ published.data.role }}</p>
+      <div class="--pt-sm">
+        <p>{{ published.data.title }}</p>
+        <p class="--text-muted">{{ published.data.role }}</p>
       </div>
     </a>
   </li>
