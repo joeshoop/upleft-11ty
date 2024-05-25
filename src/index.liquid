@@ -1,20 +1,22 @@
 ---
 layout: default
 title: "Index"
-description: "Studio Upleft"
+description: "Upleft"
 ---
-<ul class="featured-items">
+<ul class="featured-items flow">
   {%- for featured in collections.featured reversed -%}
-  <li class="featured-item ">
-    <div class=" content">
-      <h2>{{ featured.data.client }}</h2>
-      <p class="title">
-        <span class="text-muted">{{ featured.data.challenge }}</span>
-        <span>{{ featured.data.impact }}</span>
-      </p>
-      <p class="label">{{ featured.data.role }}</p>
+  <li class="featured-item">
+    <div class="container-md flow pt-xl pb-md">
+      <div>
+        <h2>{{ featured.data.client }}</h2>
+        <p class="title text-lg">
+          <span class="text-muted">{{ featured.data.challenge }}</span>
+          <span>{{ featured.data.impact }}</span>
+        </p>
+        <p class="text-muted">{{ featured.data.role }}</p>
+      </div>
     </div>
-    <div class="pswp-gallery" id="gallery">
+    <div class="container-xl pswp-gallery" id="gallery">
       {%- for image in featured.data.images -%}
       <div class="pswp-gallery__item">
         <a href="{{ featured.url }}{{ image.src }}" data-pswp-width="1200" data-pswp-height="800" target="_blank">
@@ -31,9 +33,9 @@ description: "Studio Upleft"
 <ul class="published-items">
   {%- for published in collections.published reversed -%}
   <li class="published-item">
-    <a href="{{ published.url }}" class="">
+    <a href="{{ published.url }}">
       <div class="thumbnail" style="background-image: url('{{ published.url }}/{{ published.data.image }}'); background-color: {{ published.data.bg-default }};"></div>
-      <div class="content">
+      <div class="pt-sm">
         <p class="title">{{ published.data.title }}</p>
         <p class="label">{{ published.data.role }}</p>
       </div>

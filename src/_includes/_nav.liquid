@@ -1,25 +1,28 @@
-<nav>
-  <div class="intro">
-	<h1>Studio Upleft</h1>
-  </div>
-	<ul class="nav-items">
-	{% if title == "Index" %}
-		<li class="nav-item active">
-			<a class="nav-item-content" id="nav-home" href="/">Work</a>
-		</li>
-	{% else %}
-		<li class="nav-item">
-			<a class="nav-item-content text-muted" id="nav-home" href="/">Work</a>
-		</li>
-	{% endif %}
-	{% if title == "About" %}
-		<li class="nav-item active">
-			<a class="nav-item-content" id="nav-about" href="/about/">About</a>
-		</li>
-	{% else %}
-		<li class="nav-item">
-			<a class="nav-item-content text-muted" id="nav-about" href="/about/">About</a>
-		</li>
-	{% endif %}
-	</ul>
-</nav>
+<header class="container-md">
+	<div class="intro py-lg">
+		<h1>Upleft <span class="text-muted">is the office of Joe Shoop, a designer and tinkerer in Seattle thinking about simplicty in complex interactivity.</span></h1>
+		<label for="theme-switch" class="switch-label"></label>
+	</div>
+	<nav>
+		<ul class="nav-items">
+			{% if title == "Index" %}
+			<li class="nav-item active">
+				<a class="nav-item-content" id="nav-home" href="/">Work</a>
+			</li>
+			{% else %}
+			<li class="nav-item">
+				<a class="nav-item-content text-muted" id="nav-home" href="/">Work</a>
+			</li>
+			{% endif %}
+			{% if title == "About" %}
+			<li class="nav-item active">
+				<a class="nav-item-content" id="nav-about" href="/about/">About</a>
+			</li>
+			{% else %}
+			<li class="nav-item">
+				<a class="nav-item-content text-muted" id="nav-about" href="/about/">About</a>
+			</li>
+			{% endif %}
+		</ul>
+	</nav>
+</header>

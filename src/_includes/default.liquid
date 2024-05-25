@@ -5,23 +5,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
   <meta name="description" content="{% if description %}{{ description }}{% else %}A digital product design studio in Seattle{% endif %}" />
-  <title>{% if title %}{{ title }}—Studio Upleft{% else %}Studio Upleft{% endif %}</title>
+  <title>{% if title %}{{ title }}—Upleft{% else %}Upleft{% endif %}</title>
   <link rel="stylesheet" href="/_css/main.css" />
   <link rel="stylesheet" href="/_css/photoswipe.css">
-  <link rel="stylesheet" href="https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css">
 </head>
 
+<body>
+  <div id="page">
+    <div id="content">
 
+      {% include "_nav" %}
 
-<body class="text-default bg-default">
+      {{ content }}
 
-  {% include "_nav" %}
-
-  {{ content }}
-
-  {% include "_footer" %}
-
+      {% include "_footer" %}
+    </div>
+  </div>
 </body>
+
 <script type="module">
   import PhotoSwipeLightbox from './_js/photoswipe-lightbox.esm.min.js';
   import PhotoSwipeDynamicCaption from './_js/photoswipe-dynamic-caption-plugin.esm.min.js';
@@ -33,8 +34,8 @@
     right: 0
   };
   const largeScreenPadding = {
-    top: 30,
-    bottom: 30,
+    top: 0,
+    bottom: 0,
     left: 0,
     right: 0
   };
@@ -57,5 +58,20 @@
 
   lightbox.init();
 </script>
+<!-- <script>
+  // This code is used to remember theme selection between page loads
+  const themeSwitch = document.querySelector('.theme-switch');
+  themeSwitch.checked = localStorage.getItem('switchedTheme') === 'true';
+
+  themeSwitch.addEventListener('change', function(e) {
+    if (e.currentTarget.checked === true) {
+      // Add item to localstorage
+      localStorage.setItem('switchedTheme', 'true');
+    } else {
+      // Remove item if theme is switched back to normal
+      localStorage.removeItem('switchedTheme');
+    }
+  });
+</script> -->
 
 </html>
