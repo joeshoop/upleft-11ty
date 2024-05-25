@@ -75,6 +75,7 @@ nav,
 
 .published-item .label {
 	margin-top: 0;
+	color: var(--text-muted);
 }
 
 /* Media */
