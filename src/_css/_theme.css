@@ -1,8 +1,8 @@
 :root {
 
 	/* Fonts */
-	--font-sans: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji;
-	--font-serif: 'Times New Roman', sans-serif;
+	--font-sans: system-ui, sans-serif;
+	--font-serif: 'Times New Roman', serif;
 	--font-lg: clamp(18px, 1vw + 1rem, 26px);
 	--font-md: 16px;
 	--font-sm: 14px;
@@ -19,38 +19,65 @@
 	--spacing-width-md: 36rem;
 	--spacing-width-xl: 52rem;
 
+	/* Neutral Palette */
+	--neutral-50: hsla(108, 1%, 96%, 1);
+	--neutral-100: hsla(108, 1%, 89%, 1);
+	--neutral-200: hsla(108, 1%, 78%, 1);
+	--neutral-300: hsla(108, 1%, 64%, 1);
+	--neutral-400: hsla(108, 1%, 50%, 1);
+	--neutral-500: hsla(108, 1%, 40%, 1);
+	--neutral-600: hsla(108, 1%, 32%, 1);
+	--neutral-700: hsla(108, 1%, 26%, 1);
+	--neutral-800: hsla(108, 1%, 22%, 1);
+	--neutral-900: hsla(108, 1%, 15%, 1);
+	--neutral-950: hsla(108, 1%, 10%, 1);
+
 	/* Light Theme Colors */
-	--bg-strong: hsla(360, 18%, 91%, 1);
-	--bg-default: hsla(20, 13%, 91%, 1);
-	--bg-muted: hsla(20, 1%, 82%, 1);
+	--bg-strong: var(--neutral-50);
+	--bg-default: var(--neutral-100);
+	--bg-muted: var(--neutral-100);
 	--bg-selection: hsla(0, 0%, 0%, 0.3);
-	--text-strong: hsla(0, 0%, 0%, 1);
-	--text-default: hsla(0, 0%, 20%, 1);
-	--text-muted: hsla(360, 3%, 47%, 1);
-	--text-interactive: hsla(188, 89%, 51%, 1);
-	--border-strong: var(--text-strong);
-	--border-default: hsla(0, 0%, 0%, 0.3);
-	--border-muted: hsla(0, 0%, 0%, 0.1);
+
+	--text-strong: var(--neutral-950);
+	--text-default: var(--neutral-800);
+	--text-muted: var(--neutral-500);
+	--text-interactive: var(--neutral-950);
+
+	--border-strong: var(--neutral-600);
+	--border-default: var(--neutral-400);
+	--border-muted: var(--neutral-200);
+
+	/* Light Elevation */
+	--shadow-sm: 0px 8px 12px -16px rgba(0, 0, 0, 1);
+	--shadow-md: 0px 8px 12px -16px rgba(0, 0, 0, 1);
+	--shadow-lg: 0px 24px 40px -24px rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		/* Dark Theme Colors */
-		--bg-strong: hsla(50, 20%, 0%, 1);
-		--bg-default: hsla(50, 5%, 11%, 1);
-		--bg-muted: hsla(50, 10%, 18%, 1);
+		--bg-strong: var(--neutral-950);
+		--bg-default: var(--neutral-900);
+		--bg-muted: var(--neutral-800);
 		--bg-selection: hsla(0, 0%, 100%, 0.3);
-		--text-strong: hsla(0, 0%, 100%, 1);
-		--text-default: hsla(50, 3%, 85%, 1);
-		--text-muted: hsla(50, 3%, 60%, 1);
-		--text-interactive: hsla(0, 1%, 100%, 1);
-		--border-strong: var(--text-strong);
-		--border-default: hsla(0, 0%, 100%, 0.3);
-		--border-muted: hsla(0, 0%, 100%, 0.1);
+
+		--text-strong: var(--neutral-50);
+		--text-default: var(--neutral-100);
+		--text-muted: var(--neutral-300);
+		--text-interactive: var(--neutral-50);
+
+		--border-strong: var(--neutral-300);
+		--border-default: var(--neutral-600);
+		--border-muted: var(--neutral-800);
+
+		/* Dark Elevation */
+		--shadow-sm: 0px 8px 12px -16px rgba(0, 0, 0, 1);
+		--shadow-md: 0px 12px 16px -18px rgba(0, 0, 0, 1);
+		--shadow-lg: 0px 24px 40px -24px rgba(0, 0, 0, 0.6);
 	}
 }
 
-html {
+body {
 	background: var(--bg-default);
 	color: var(--text-default);
 	font-family: var(--font-sans);
@@ -147,6 +174,10 @@ p+p {
 	background-color: var(--bg-muted);
 }
 
+.bg-hover-strong:hover {
+	background-color: var(--bg-default);
+}
+
 /* Text Color */
 
 .text-strong {
@@ -182,6 +213,18 @@ hr,
 
 .border-muted {
 	border-color: var(--border-muted);
+}
+
+.shadow-sm {
+	box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+	box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+	box-shadow: var(--shadow-lg);
 }
 
 /* Layout */
