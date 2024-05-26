@@ -23,6 +23,15 @@
 				<a class="nav-item-content --text-muted" id="nav-about" href="/about/">About</a>
 			</li>
 			{% endif %}
+			{% if title == "Scraps" %}
+			<li class="nav-item --active">
+				<a class="nav-item-content" id="nav-scraps" href="/scraps/">Scraps</a>
+			</li>
+			{% else %}
+			<li class="nav-item">
+				<a class="nav-item-content --text-muted" id="nav-scraps" href="/scraps/">Scraps</a>
+			</li>
+			{% endif %}
 		</ul>
 	</nav>
 </header>

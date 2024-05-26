@@ -62,6 +62,14 @@ h6 {
 }
 
 /*
+  Un-style unordered lists
+*/
+
+ul {
+  list-style-type:none;
+}
+
+/*
 Remove Animations for people who don't want them
 */
 @media (prefers-reduced-motion) {
