@@ -4,35 +4,31 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("work", function(collection) {
-    const coll = collection.getFilteredByTag("work");
+    const projects = collection.getFilteredByTag("work");
 
-    for (let i = 0; i < coll.length; i++) {
-      const prevWork = coll[i - 1];
-      const nextWork = coll[i + 1];
-      const prevprevWork = coll[i - 2];
+    for (let i = 0; i < projects.length; i++) {
+      const prevWork = projects[i - 1];
+      const nextWork = projects[i + 1];
+      const prevprevWork = projects[i - 2];
 
-      coll[i].data["prevWork"] = prevWork;
-      coll[i].data["nextWork"] = nextWork;
-      coll[i].data["prevprevWork"] = prevprevWork;
+      projects[i].data["prevWork"] = prevWork;
+      projects[i].data["nextWork"] = nextWork;
+      projects[i].data["prevprevWork"] = prevprevWork;
     }
 
-    return coll;
+    return projects;
   });
 
   return {
     dir: {
       input: 'src',
-      includes: "_includes"
+      includes: "_includes",
+      layouts: "_layouts"
     },
     templateFormats: [
       "liquid",
       "css",
-      "jpg",
-      "png",
-      "svg",
-      "mp4",
-      "css",
-      "js" // css is not yet a recognized template extension in Eleventy
+      "js"
     ]
   };
 };

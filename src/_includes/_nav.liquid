@@ -1,7 +1,72 @@
 <header class="container --w-md">
-	<div class="intro --py-lg">
-		<h1>Upleft <span class="--text-muted">is the office of Joe Shoop, a designer and tinkerer in Seattle thinking about simplicty in complex interactivity.</span></h1>
-		<label for="theme-switch" class="switch-label"></label>
+	<div class="intro flow --py-lg">
+		{% if title == "Index" %}
+		<h1>Studio Upleft <span class="--text-muted">is the office of Joe Shoop, a designer and tinkerer in Seattle thinking about simplicty in complex interactivity.</span></h1>
+		{% else %}
+		<h1>Studio Upleft</h1>
+		{% endif %}
+
+		<div>
+			<h2>Breadcrumbs</h2>
+			{% assign breadcrumbs = page.url | split: '/' | reverse %}
+
+			Json: {{ breadcrumbs | json }}
+
+			<ul class="flow">
+			{% for crumb in breadcrumbs %}
+			<li>
+				{% assign words = crumb | split: '-' %}
+				{% if words.size > 0 %}
+
+					{% if forloop.index == 1 %}
+						<h2>Self</h2>
+						<a href="{{ page.url }}">
+							{% for word in words %}
+							{{ word | capitalize }}
+							{% endfor %}
+						</a>
+					{% endif %}
+					{% comment %} Reversed, the second item in the array is the parent {% endcomment %}
+					{% if forloop.index == 2 %}
+						<h2>Parent</h2>
+						<a href="{{ page.url }}">
+							{% for word in words %}
+							{{ word | capitalize }}
+							{% endfor %}
+						</a>
+
+					{% endif %}
+					{% if forloop.index == 3 %}
+						<h2>Grandparent</h2>
+						<a href="{{ page.url }}">
+							{% for word in words %}
+							{{ word | capitalize }}
+							{% endfor %}
+						</a>
+					{% endif %}
+					{% if forloop.index == 4 %}
+						<h2>Great Grandparent</h2>
+						<a href="{{ page.url }}">
+							{% for word in words %}
+							{{ word | capitalize }}
+							{% endfor %}
+						</a>
+					{% endif %}
+				{% endif %}
+			</li>
+			{% endfor %}
+			</ul>
+			{% if words.size > 0 %}
+				{% for word in words %}
+				{{ word | capitalize }}
+				{% endfor %}
+			{% endif %}
+		</div>
+		<div>
+			<p>Page Url: {{ page.url }}</p>
+			<p>Parent Url: {{ page.url | split: '/' | join: "/" }}/</p>
+		</div>
+
 	</div>
 	<nav>
 		<ul class="nav-items">
