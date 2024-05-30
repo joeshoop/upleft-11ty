@@ -5,68 +5,29 @@
 		{% else %}
 		<h1>Studio Upleft</h1>
 		{% endif %}
-
 		<div>
-			<h2>Breadcrumbs</h2>
+			<ul>
 			{% assign breadcrumbs = page.url | split: '/' | reverse %}
-
-			Json: {{ breadcrumbs | json }}
-
-			<ul class="flow">
-			{% for crumb in breadcrumbs %}
-			<li>
+			{% assign trail_length = breadcrumbs | size | minus: 1 %}
+			{% assign pathHome = breadcrumbs | slice: 0, trail_length | reverse %}
+				
+			{% for crumb in pathHome %}
+				{% assign crumb_url = breadcrumbs | slice: 0, trail_length %}
+				{{ crumb_url | reverse | join: "/" | prepend: "/" }}
+				{% comment %} Path to the current crumb. Based on trailLength and forloop.index? {% endcomment %}
 				{% assign words = crumb | split: '-' %}
-				{% if words.size > 0 %}
-
-					{% if forloop.index == 1 %}
-						<h2>Self</h2>
-						<a href="{{ page.url }}">
-							{% for word in words %}
-							{{ word | capitalize }}
-							{% endfor %}
-						</a>
-					{% endif %}
-					{% comment %} Reversed, the second item in the array is the parent {% endcomment %}
-					{% if forloop.index == 2 %}
-						<h2>Parent</h2>
-						<a href="{{ page.url }}">
-							{% for word in words %}
-							{{ word | capitalize }}
-							{% endfor %}
-						</a>
-
-					{% endif %}
-					{% if forloop.index == 3 %}
-						<h2>Grandparent</h2>
-						<a href="{{ page.url }}">
-							{% for word in words %}
-							{{ word | capitalize }}
-							{% endfor %}
-						</a>
-					{% endif %}
-					{% if forloop.index == 4 %}
-						<h2>Great Grandparent</h2>
-						<a href="{{ page.url }}">
-							{% for word in words %}
-							{{ word | capitalize }}
-							{% endfor %}
-						</a>
-					{% endif %}
-				{% endif %}
-			</li>
+					<li>
+						{% if forloop.index < trail_length %}
+							<a href="#">&nwarr; 
+								{% for word in words %}
+									{{ word | capitalize }}
+								{% endfor %}
+							</a>
+						{% endif %}
+					  </li>
 			{% endfor %}
 			</ul>
-			{% if words.size > 0 %}
-				{% for word in words %}
-				{{ word | capitalize }}
-				{% endfor %}
-			{% endif %}
 		</div>
-		<div>
-			<p>Page Url: {{ page.url }}</p>
-			<p>Parent Url: {{ page.url | split: '/' | join: "/" }}/</p>
-		</div>
-
 	</div>
 	<nav>
 		<ul class="nav-items">

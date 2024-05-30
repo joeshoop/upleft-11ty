@@ -1,3 +1,4 @@
+
 module.exports = function(eleventyConfig) {
   eleventyConfig.setServerOptions({
     watch: ['_site/**/*.css'],
@@ -18,7 +19,7 @@ module.exports = function(eleventyConfig) {
 
     return projects;
   });
-
+  
   return {
     dir: {
       input: 'src',
