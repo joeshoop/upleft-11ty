@@ -21,7 +21,36 @@ module.exports = function(eleventyConfig) {
     return projects;
   });
 
-  eleventyConfig.addWatchTarget("**/*.{png,jpeg}");
+  // Create a collection of all posts
+  eleventyConfig.addCollection("posts", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("*.liquid");
+  });
+
+  // Create backlinks
+  eleventyConfig.addCollection("backlinks", function(collectionApi) {
+    let posts = collectionApi.getFilteredByGlob("*.liquid");
+    let backlinks = {};
+
+    // Initialize backlinks
+    posts.forEach(post => {
+      backlinks[post.url] = [];
+    });
+
+    // Populate backlinks
+    posts.forEach(post => {
+      let content = post.template.frontMatter.content;
+      let links = content.match(/\[.*?\]\((.*?)\)/g) || [];
+
+      links.forEach(link => {
+        let url = link.match(/\((.*?)\)/)[1];
+        if (backlinks[url]) {
+          backlinks[url].push(post.url);
+        }
+      });
+    });
+
+    return backlinks;
+  });
 
   return {
     dir: {

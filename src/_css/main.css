@@ -11,6 +11,10 @@ hr {
 	margin: var(--spacing-lg) auto;
 }
 
+[id] {
+	scroll-margin-top: var(--spacing-lg);
+}
+
 /* Main Navigation */
 
 nav,
