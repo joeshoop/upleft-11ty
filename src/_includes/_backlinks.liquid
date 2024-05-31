@@ -1,0 +1,13 @@
+{% assign currentUrl = page.url %}
+{% assign backlinks = collections.backlinks[currentUrl] %}
+
+{% if backlinks %}
+  <h2>Links here</h2>
+  <ul>
+	{% for backlink in backlinks %}
+	  <li>
+		<a href="{{ backlink.url }}">{{ backlink.title }}</a>
+	  </li>
+	{% endfor %}
+  </ul>
+{% endif %}

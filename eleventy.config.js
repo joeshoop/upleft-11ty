@@ -1,3 +1,4 @@
+const pluginBacklinks = require("./src/_11ty/backlinks.js")
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setServerOptions({
@@ -19,7 +20,9 @@ module.exports = function(eleventyConfig) {
 
     return projects;
   });
-  
+
+  eleventyConfig.addWatchTarget("**/*.{png,jpeg}");
+
   return {
     dir: {
       input: 'src',
@@ -28,8 +31,13 @@ module.exports = function(eleventyConfig) {
     },
     templateFormats: [
       "liquid",
+      "md",
       "css",
-      "js"
+      "js",
+      "jpg",
+      "png",
+      "svg",
+      "jpeg"
     ]
   };
 };

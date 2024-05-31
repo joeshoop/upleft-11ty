@@ -69,16 +69,16 @@ books:
   info: “The world is working exactly as designed. And it's not working very well. Which means we need to do a better job of designing it.”
 ---
 
-<a href="./nesting/">Nesting</a>
-
 <div class="flow container --w-md --py-xl">
-	<h1>For me, the best design books are more about how to think than how to execute. Here are some of my favorites.</h1>
-	<ul class="flow">
-  	{%- for book in books -%}
-  		<li>
-			<h3><a href="{{ book.url }}">{{ book.title }}↗</a></h3>
-			<p class="--text-muted">{{ book.info }}</p>
-  		</li>
+  <p>For me, the best design books are more about how to think than how to execute. Here are some of my favorites.</p>
+  <hr />
+  <ul class="flow">
+  <h2>Product Design</h2>
+  {%- for book in books -%}
+  	<li>
+    	<h3><a href="{{ book.url }}">{{ book.title }}↗</a></h3>
+    	<p class="--text-muted">{{ book.info }}</p>
+  	</li>
   	{%- endfor -%}
 	</ul>
 </div>

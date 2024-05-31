@@ -1,34 +1,45 @@
 <header class="container --w-md">
-	<div class="intro flow --py-lg">
+	<div class="--py-lg">
 		{% if title == "Index" %}
-		<h1>Studio Upleft <span class="--text-muted">is the office of Joe Shoop, a designer and tinkerer in Seattle thinking about simplicty in complex interactivity.</span></h1>
+		<p>Studio Upleft <span class="--text-muted">is the office of Joe Shoop, a designer in Seattle thinking about simplicty in complex interactivity. <a href="/about/">About</a>.</span></p>
 		{% else %}
 		<div>
-			<ul>
-			{% assign breadcrumbs = page.url | split: '/' | reverse %}
-			{% assign trail_length = breadcrumbs | size | minus: 1 %}
-			{% assign pathHome = breadcrumbs | slice: 0, trail_length | reverse %}
+			{% assign breadcrumbs = page.url | split: '/' %}
+			{% assign pathHome = '' %}
+
+			<nav aria-label="breadcrumbs">
+			  <ul>
 				<li>
-					<h1><a href="/">Studio Upleft</a></h1>
-				 </li>
-			{% for crumb in pathHome %}
-			{{ pathHome | join: "/" }}
-				{% assign words = crumb | split: '-' %}
-					<li>
-						{% if forloop.index < trail_length %}
-							<a href="#">&nwarr; 
-								{% for word in words %}
-									{{ word | capitalize }}
-								{% endfor %}
-							</a>
+				  <a href="/{{ '/' | slugify }}">&nwarr; Studio Upleft</a>
+				</li>
+				{% for crumb in breadcrumbs %}
+					{% if crumb != '' %}
+						{% assign pathHome = pathHome | append: '/' | append: crumb %}
+						{% capture crumbTitlecase %}
+							{% assign words = crumb | split: '-' %}
+							{% for word in words %}
+								{{ word | capitalize }}
+							{% endfor %}
+						{% endcapture %}
+						{% if forloop.last %}
+							{% continue %}
+						{% elsif forloop.first%}
+						<li class="first crumb">
+							<a href="{{ pathHome }}">&nwarr; {{ crumbTitlecase }}</a>
+						{% else %}
+						<li class="trail crumb">
+							<a href="{{ pathHome }}">&nwarr; {{ crumbTitlecase }}</a>
 						{% endif %}
-					  </li>
-			{% endfor %}
-			</ul>
-		{% endif %}
+						</li>
+					{% endif %}
+				{% endfor %}
+			  </ul>
+			</nav>
 		</div>
+		{% endif %}
 	</div>
-	<nav>
+	{% if crumb != '' %}<h1>{{ crumbTitlecase }}</h1>{% endif %}
+	{% comment %} <nav>
 		<ul class="nav-items">
 			{% if title == "Index" %}
 			<li class="nav-item --active">
@@ -58,5 +69,5 @@
 			</li>
 			{% endif %}
 		</ul>
-	</nav>
+	</nav> {% endcomment %}
 </header>

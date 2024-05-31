@@ -1,14 +1,15 @@
 :root {
 
 	/* Fonts */
-	--font-sans: system-ui, sans-serif;
+	--font-display: 'SF Pro Display', system-ui, sans-serif;
+	--font-sans: 'SF Pro', system-ui, sans-serif;
 	--font-serif: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
-	--font-lg: clamp(18px, 1vw + 1rem, 26px);
+	--font-lg: clamp(20px, -0.75rem + 5vw, 28px);
 	--font-md: 16px;
 	--font-sm: 14px;
 
 	/* Spacing */
-	--spacing: 1.5em;
+	--spacing: clamp(16px, -0.75rem + 5vw, 24px);
 	--spacing-xs: calc(0.25 * var(--spacing));
 	--spacing-sm: calc(0.5 * var(--spacing));
 	--spacing-md: var(--spacing);
@@ -39,7 +40,7 @@
 	--bg-selection: hsla(0, 0%, 0%, 0.3);
 
 	--text-strong: var(--neutral-950);
-	--text-default: var(--neutral-700);
+	--text-default: var(--neutral-800);
 	--text-muted: var(--neutral-500);
 	--text-interactive: var(--neutral-950);
 
@@ -106,32 +107,36 @@ a:hover {
 }
 
 h1 {
-	font-size: var(--font-md);
+	font-family: var(--font-display);
+	font-size: var(--font-lg);
 	color: var(--text-strong);
-	font-weight: 400;
+	font-weight: 700;
+	letter-spacing: clamp(0em, 1vw + 1rem, -0.3em);
 }
 
 h2 {
 	font-size: var(--font-md);
-	color: var(--text-muted);
-	font-weight: 400;
+	color: var(--text-default);
+	font-weight: 700;
+	letter-spacing: clamp(0em, 1vw + 1rem, -0.02em);
 }
 
 h3 {
 	font-size: var(--font-md);
 	color: var(--text-muted);
-	font-weight: 400;
+	font-weight: 500;
 }
 
 h4 {
 	font-size: var(--font-sm);
 	color: var(--text-muted);
-	font-weight: 400;
+	font-weight: 500;
 }
 
 p {
 	font-size: var(--font-md);
-	font-weight: 400;
+	font-weight: 500;
+	letter-spacing: clamp(-0.02em, 1vw + 1rem, -0.02em);
 }
 
 p+p {
@@ -153,6 +158,7 @@ p+p {
 .--text-lg {
 	font-size: var(--font-lg);
 	line-height: 125%;
+	letter-spacing: clamp(0em, 1vw + 1rem, -0.03em);
 }
 
 .--text-md {
@@ -202,6 +208,8 @@ p+p {
 hr,
 .rule {
 	border: 1px solid var(--border-muted);
+	/* For retina screens */
+	transform: scaleY(0.5);
 }
 
 .--border-strong {
