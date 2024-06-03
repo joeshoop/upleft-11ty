@@ -1,34 +1,41 @@
-<div class="project-footer">
-	<h2>More work</h2>
-	<div class="featured-items">
-		<div class="featured-item">
+<hr />
+<div class="container --w-md --pb-xl">
+	<h2 class="--pb-sm">More work</h2>
+	<div class="published-items">
+		<div class="published-item">
 			{% if nextWork.url %}
 			<a href="{{ nextWork.url }}">
-				<div class="thumbnail" style="background-image: url('{{ nextWork.url }}{{ nextWork.data.image }}'); background-color: {{ nextWork.data.bg-default }};"></div>
-				<p class="title">{{ nextWork.data.title-short }}</p>
-				<p class="label">{{ nextWork.data.role }}</p>
+				<div class="thumbnail" style="background-image: url('{{ nextWork.url }}{{ nextWork.data.thumbnail }}');"></div>
+				<div class="--pt-sm">
+					<p class="title">{{ nextWork.data.title }}</p>
+					<p class="label">{{ nextWork.data.role }}</p>
+				</div>
 			</a>
 			{% else %}
 			<a href="{{ prevprevWork.url }}">
-				<div class="thumbnail" style="background-image: url('{{ prevprevWork.url }}{{ prevprevWork.data.image }}'); background-color: {{ prevprevWork.data.bg-default }};"></div>
-				<p class="title">{{ prevprevWork.data.title-short }}</p>
-				<p class="label">{{ prevprevWork.data.role }}</p>
+				<div class="thumbnail" style="background-image: url('{{ prevprevWork.url }}{{ prevprevWork.data.thumbnail }}');"></div>
+				<div class="--pt-sm">
+					<p class="title">{{ prevprevWork.data.title }}</p>
+					<p class="label">{{ prevprevWork.data.role }}</p>
+				</div>
 			</a>
 			{% endif %}
 		</div>
-		<div class="featured-item">
+		<div class="published-item">
 			{% if prevWork.url %}
-			<a href="{{ prevWork.url }}" class="featured-item">
-				<div class="thumbnail" style="background-image: url('{{ prevWork.url }}{{ prevWork.data.image }}'); background-color: {{ prevWork.data.bg-default }};"></div>
-				<p class="title">{{ prevWork.data.title-short }}</p>
-				<p class="label">{{ prevWork.data.role }}</p>
+			<a href="{{ prevWork.url }}" class="published-item">
+				<div class="thumbnail" style="background-image: url('{{ prevWork.url }}{{ prevWork.data.thumbnail }}');"></div>
+				<div class="--pt-sm">
+					<p class="title">{{ prevWork.data.title }}</p>
+					<p class="label">{{ prevWork.data.role }}</p>
+				</div>
 			</a>
 			{% else %}
 
 			{%- for featured in collections.featured reversed -%}
 			<a href="{{ featured.url }}" class="featured-item">
-				<div class="thumbnail" style="background-image: url('{{ featured.url }}{{ featured.data.image }}'); background-color: {{ featured.data.bg-default }};"></div>
-				<p class="title">{{ featured.data.title-short }}</p>
+				<div class="thumbnail" style="background-image: url('{{ featured.url }}{{ featured.data.thumbnail }}');"></div>
+				<p class="title">{{ featured.data.title }}</p>
 				<p class="label">{{ featured.data.role }}</p>
 			</a>
 			{% break %}

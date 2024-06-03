@@ -28,16 +28,20 @@ title: "Index"
 
 <hr />
 
-<ul class="published-items">
+<ul class="published-items --py-lg">
   {%- for published in collections.published reversed -%}
   <li class="published-item">
     <a href="{{ published.url }}">
-      <div class="thumbnail" style="background-image: url('{{ published.url }}/{{ published.data.image }}'); background-color: {{ published.data.bg-default }};"></div>
+      <div class="thumbnail" style="background-image: url('{{ published.url }}/{{ published.data.thumbnail }}');"></div>
       <div class="--pt-sm">
         <p>{{ published.data.title }}</p>
-        <p class="--text-muted">{{ published.data.role }}</p>
+        <span class="--text-sm --text-muted">{{ published.data.role }}</span>
       </div>
     </a>
   </li>
   {%- endfor -%}
 </ul>
+
+<div class="container --w-sm">
+  <hr />
+</div>

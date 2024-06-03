@@ -3,7 +3,7 @@
 @import '_theme.css';
 
 #page {
-	padding: 0 var(--spacing-md);
+	padding: 0 var(--spacing-lg);
 }
 
 hr {
@@ -75,8 +75,7 @@ nav,
 	text-decoration: none;
 }
 
-.published-item .label {
-	margin-top: 0;
+.label {
 	color: var(--text-muted);
 }
 
@@ -175,7 +174,7 @@ nav,
 .card {
 	cursor: pointer;
 	display: flex;
-	background: var(--bg-muted);
+	background: var(--bg-strong);
 	box-shadow: var(--shadow-md);
 	border-radius: var(--spacing-xs);
 }
@@ -188,7 +187,8 @@ nav,
 .container {
 	position: relative;
 	width: 100%;
-	margin: 0 auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 footer {

@@ -1,9 +1,10 @@
 :root {
 
 	/* Fonts */
-	--font-display: 'Antarctica', 'SF Pro Display', system-ui, sans-serif;
+	--font-display: 'SF Pro Display', system-ui, sans-serif;
 	--font-sans: 'SF Pro', system-ui, sans-serif;
 	--font-serif: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+	--font-xl: clamp(2rem, 0.313rem + 4.688vw, 2.75rem);
 	--font-lg: clamp(20px, -0.75rem + 5vw, 28px);
 	--font-md: 16px;
 	--font-sm: 14px;
@@ -21,17 +22,17 @@
 	--spacing-width-xl: 52rem;
 
 	/* Neutral Palette */
-	--neutral-50: hsla(108, 1%, 96%, 1);
-	--neutral-100: hsla(108, 1%, 89%, 1);
-	--neutral-200: hsla(108, 1%, 78%, 1);
-	--neutral-300: hsla(108, 1%, 64%, 1);
-	--neutral-400: hsla(108, 1%, 50%, 1);
-	--neutral-500: hsla(108, 1%, 40%, 1);
-	--neutral-600: hsla(108, 1%, 32%, 1);
-	--neutral-700: hsla(108, 1%, 26%, 1);
-	--neutral-800: hsla(108, 1%, 22%, 1);
-	--neutral-900: hsla(108, 1%, 15%, 1);
-	--neutral-950: hsla(108, 1%, 10%, 1);
+	--neutral-50: hsla(240, 10%, 96%, 1);
+	--neutral-100: hsla(240, 10%, 89%, 1);
+	--neutral-200: hsla(240, 10%, 78%, 1);
+	--neutral-300: hsla(240, 10%, 64%, 1);
+	--neutral-400: hsla(240, 10%, 50%, 1);
+	--neutral-500: hsla(240, 10%, 40%, 1);
+	--neutral-600: hsla(240, 10%, 32%, 1);
+	--neutral-700: hsla(240, 10%, 26%, 1);
+	--neutral-800: hsla(240, 10%, 22%, 1);
+	--neutral-900: hsla(240, 10%, 15%, 1);
+	--neutral-950: hsla(240, 10%, 10%, 1);
 
 	/* Light Theme Colors */
 	--bg-strong: var(--neutral-50);
@@ -83,7 +84,7 @@ body {
 	color: var(--text-default);
 	font-family: var(--font-sans);
 	font-size: var(--font-md);
-	line-height: 1.5em;
+	line-height: 1.5;
 }
 
 ::selection {
@@ -91,6 +92,7 @@ body {
 }
 
 img {
+	width:100%;
 	max-width: 100%;
 	display: flex;
 	background: var(--bg-muted);
@@ -107,6 +109,40 @@ a:hover {
 	text-decoration-color: var(--text-interactive);
 }
 
+blockquote {
+	font-size:var(--font-lg);
+	border-left:1px solid var(--border-muted);
+	padding-left:var(--spacing-md);
+	margin: var(--spacing-lg) auto;
+	line-height:1.3;
+}
+
+strong, .--font-strong {
+	font-weight:700;
+}
+
+em, .--font-emphasis {
+	font-style: italic;
+}
+
+aside {
+	float:right;
+	width:40%;
+	font-size: var(--font-sm);
+	color:var(--text-default);
+	border-left:1px solid var(--border-muted);
+	padding-left:var(--spacing-xs);
+	margin: var(--spacing-sm) 0 var(--spacing-sm) var(--spacing-md);
+}
+
+.hero {
+	font-family: var(--font-display);
+	font-size: var(--font-xl);
+	color: var(--text-strong);
+	font-weight: 700;
+	letter-spacing: clamp(0em, 1vw + 1rem, -0.3em);
+}
+
 h1 {
 	font-family: var(--font-display);
 	font-size: var(--font-lg);
@@ -116,6 +152,7 @@ h1 {
 }
 
 h2 {
+	font-family: var(--font-sans);
 	font-size: var(--font-md);
 	color: var(--text-default);
 	font-weight: 700;
@@ -123,24 +160,26 @@ h2 {
 }
 
 h3 {
+	font-family: var(--font-sans);
 	font-size: var(--font-md);
 	color: var(--text-muted);
 	font-weight: 500;
 }
 
-h4 {
+h4, h5, h6 {
+	font-family: var(--font-sans);
 	font-size: var(--font-sm);
 	color: var(--text-muted);
 	font-weight: 500;
 }
 
 p {
-	font-size: var(--font-md);
+	font-size: inherit;
 	font-weight: 500;
 	letter-spacing: clamp(-0.02em, 1vw + 1rem, -0.02em);
 }
 
-p+p {
+p+p:not(.label) {
 	margin-top: var(--spacing-sm);
 }
 
@@ -154,7 +193,17 @@ p+p {
 	font-family: var(--font-serif);
 }
 
+.--font-serif {
+	font-size:1.125em;
+}
+
 /* Text Size */
+
+.--text-xl {
+	font-size: var(--font-xl);
+	line-height: 125%;
+	letter-spacing: clamp(0em, 1vw + 1rem, -0.03em);
+}
 
 .--text-lg {
 	font-size: var(--font-lg);
@@ -251,6 +300,14 @@ hr,
 
 .--w-xl {
 	max-width: var(--spacing-width-xl, 50rem);
+}
+
+/* Left and right margin value should match padding on #page */
+/* This class must be paired with container because of the use of !important */
+.container.--w-full {
+	width:auto;
+	margin-left: calc(-1 * var(--spacing-lg)) !important;
+	margin-right: calc(-1 * var(--spacing-lg)) !important;
 }
 
 /* Padding Top */
