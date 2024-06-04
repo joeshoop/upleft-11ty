@@ -22,16 +22,17 @@ nav,
 
 .nav-items {
 	display: flex;
+	flex-wrap: wrap;
 	list-style-type: none;
 	margin: 0;
 	padding: 0;
-	gap: var(--spacing-sm);
-	border-bottom:1px solid var(--border-muted)
+	gap: var(--spacing-md);
+	border-bottom: 1px solid var(--border-muted)
 }
 
 .nav-items a {
-	color:var(--text-default);
-	text-decoration:none;
+	color: var(--text-default);
+	text-decoration: none;
 }
 
 .nav-item {
@@ -41,7 +42,7 @@ nav,
 }
 
 .nav-item.--active {
-	border-bottom: 1px solid var(--border-default);
+	border-bottom: 1px solid var(--border-strong);
 }
 
 .nav-item.--active a {
@@ -50,13 +51,13 @@ nav,
 
 .nav-item-content {
 	display: inline-block;
-	padding: var(--spacing-xs) 0;
+	padding: var(--spacing-sm) 0;
 	text-decoration: none;
 }
 
 .nav-item:not(.--active)>a.nav-item-content:hover {
-	border-bottom: 1px solid var(--text-interactive);
-	color: var(--text-default);
+	border-bottom: 1px solid var(--border-strong);
+	color: var(--text-strong);
 	margin-bottom: -1px;
 }
 
@@ -201,21 +202,47 @@ nav,
 
 /* Events */
 
-.past-events {
+.events {
+	/* margin-left: calc(-1 * var(--spacing-md)); */
+	/* margin-right: calc(-1 * var(--spacing-md)); */
 }
 
-.row {
-	border-top: 1px solid var(--border-muted);
-	padding: var(--spacing-sm) 0;
-	vertical-align: top;
+.event a {
 	display: grid;
 	grid-template-columns: 8rem 1fr;
-	gap: var(--spacing-md)
+	gap: var(--spacing-sm);
+	text-decoration: none;
+	padding: var(--spacing-md) 0;
+	/* padding-left: calc(1 * var(--spacing-md)); */
+	/* border-top: 1px solid var(--border-muted);a*/
 }
 
-.date { 
-	width: 12rem;
-	font-weight:600;
+.event a:hover {
+	/* background: var(--bg-strong); */
+	/* border-radius: var(--spacing-xs); */
+	/* border-top: 1px solid transparent; */
+	/* box-shadow: var(--shadow-md); */
+}
+
+/* Remove the top border from the .event immediately following a hovered .event  */
+.event:hover+.event a {
+	/* border-top: 1px solid transparent; */
+}
+
+.event a .date {
+	margin-top: 4px;
+	color: var(--text-muted);
+	font-size: var(--font-sm);
+}
+
+.event .description {
+	padding-right: calc(1 * var(--spacing-md));
+	text-decoration: underline;
+	text-decoration-color: var(--text-muted);
+}
+
+.event a:hover .description {
+	text-decoration: underline;
 }
 
 footer {
