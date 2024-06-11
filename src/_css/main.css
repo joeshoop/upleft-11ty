@@ -24,6 +24,7 @@ nav,
 	background: var(--bg-strong);
 	border-bottom: 1px solid var(--border-muted);
 	margin-bottom: var(--spacing-md);
+	font-size:var(--font-sm);
 	position: sticky;
 }
 
@@ -33,12 +34,12 @@ nav,
 	flex-wrap: wrap;
 	list-style-type: none;
 	margin: 0;
-	padding: 0 var(--spacing-md);
-	gap: var(--spacing-md);
+	padding: 0 var(--spacing-sm);
+	gap: var(--spacing-sm);
 }
 
 .nav-items a {
-	color: var(--text-muted);
+	color: var(--text-default);
 	text-decoration: none;
 }
 
@@ -70,7 +71,7 @@ nav,
 
 .nav-item-content {
 	display: inline-block;
-	padding: var(--spacing-md) 0;
+	padding: var(--spacing-sm) 0;
 	text-decoration: none;
 }
 
@@ -148,7 +149,7 @@ nav,
 	display: inline-flex;
 	background: var(--text-strong);
 	color: var(--bg-strong);
-	font-size: var(--font-md);
+	font-size: var(--font-sm);
 	padding: var(--spacing-sm) var(--spacing-lg);
 	border-radius: var(--spacing-2xl);
 }
@@ -224,49 +225,57 @@ nav,
 .events {
 	display: flex;
 	flex-wrap: wrap;
-	gap: var(--spacing-md);
+	gap:var(--spacing-md);
 }
 
 .event {
 	flex-grow: 1;
-	min-width: 10em;
+	min-width: 14em;
 	width: calc(33% - var(--spacing-md));
-
 }
 
 .event a {
+	position:relative;
 	display: flex;
 	flex-direction: column;
-	aspect-ratio: 4 / 5;
+	/* aspect-ratio: 4 / 3; */
 	text-decoration: none;
-	padding: 1em;
-	transition: all 200ms ease-in-out;
-	background: var(--bg-muted);
-	color: var(--text-default);
-	border-radius: var(--spacing-xs);
+	padding-top: var(--spacing-sm);
+	padding-bottom:var(--spacing-lg);
 }
 
-.event a:hover {
-	background: var(--bg-strong);
-	color: var(--text-strong);
-	box-shadow: var(--shadow-lg);
-	transform: translateY(-0.25em);
+.event a:before {
+	content:"";
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	height:1px;
+	background:var(--border-default);
+	transform: scaleY(0.5);
 }
 
-/* Remove the top border from the .event immediately following a hovered .event  */
-.event:hover+.event a {
-	/* border-top: 1px solid transparent; */
-}
-
-.event a .date {
+.event a .details {
+	color:var(--text-muted);
+	font-family: var(--font-serif);
+	font-style: italic;
 	font-size: var(--font-sm);
 }
 
 .event a .description {
-	margin-bottom: auto;
 	justify-self: first;
+	color:var(--text-default);
+	font-weight: 500;
 }
 
+.event a:hover .details {
+	color:var(--text-strong);
+}
+
+.event a:hover .description {
+	color:var(--text-strong);
+	text-decoration: underline;
+}
 
 
 footer {

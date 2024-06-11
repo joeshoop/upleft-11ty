@@ -55,7 +55,7 @@
 	--bg-strong: var(--neutral-50);
 	--bg-default: var(--neutral-100);
 	--bg-muted: var(--neutral-200);
-	--bg-selection: var(--neutral-500);
+	--bg-selection: var(--neutral-300);
 
 	--text-strong: var(--neutral-950);
 	--text-default: var(--neutral-700);
@@ -67,14 +67,14 @@
 	--border-muted: var(--neutral-200);
 
 	/* Light Elevation */
-	--shadow-sm: 0px 8px 12px -16px rgba(0, 0, 0, 1);
-	--shadow-md: 0px 8px 12px -16px rgba(0, 0, 0, 1);
-	--shadow-lg: 0px 24px 40px -24px rgba(0, 0, 0, 0.6);
+	--shadow-sm: 0px 8px 12px -16px rgba(0, 0, 0, 0.5);
+	--shadow-md: 0px 8px 12px -16px rgba(0, 0, 0, 0.5);
+	--shadow-lg: 0px 16px 24px -16px rgba(0, 0, 0, 0.2);
 }
 
 .primary {
 	/* Primary Theme Colors */
-	--bg-strong: var(--primary-50);
+	--bg-strong: white;
 	--bg-default: var(--primary-100);
 	--bg-muted: var(--primary-200);
 	--bg-selection: var(--primary-500);
@@ -89,7 +89,25 @@
 	--border-muted: var(--primary-200);
 }
 
-@media (prefers-color-scheme: dask) {
+
+.inverted {
+	/* Inverted Colors */
+	--bg-strong: black;
+	--bg-default: var(--neutral-950);
+	--bg-muted: var(--neutral-800);
+	--bg-selection: hsla(0, 0%, 100%, 0.15);
+	
+	--text-strong: var(--neutral-50);
+	--text-default: var(--neutral-300);
+	--text-muted: var(--neutral-400);
+	--text-interactive: var(--primary-300);
+	
+	--border-strong: var(--neutral-300);
+	--border-default: var(--neutral-500);
+	--border-muted: var(--neutral-800);
+}
+
+@media (prefers-color-scheme: dark) {
 	:root {
 		/* Dark Theme Colors */
 		--bg-strong: black;
@@ -107,9 +125,25 @@
 		--border-muted: var(--neutral-800);
 
 		/* Dark Elevation */
-		--shadow-sm: 0px 8px 12px -16px rgba(0, 0, 0, 1);
-		--shadow-md: 0px 12px 16px -18px rgba(0, 0, 0, 1);
-		--shadow-lg: 0px 24px 40px -24px rgba(0, 0, 0, 0.6);
+		--shadow-sm: 0px 8px 12px -16px rgba(0, 0, 0, 0.5);
+		--shadow-md: 0px 12px 16px -18px rgba(0, 0, 0, 0.2);
+		--shadow-lg: 0px 24px 40px -24px rgba(0, 0, 0, 0.2);
+	}
+	
+	.inverted {
+		--bg-strong: var(--neutral-50);
+		--bg-default: var(--neutral-100);
+		--bg-muted: var(--neutral-200);
+		--bg-selection: var(--neutral-300);
+		
+		--text-strong: var(--neutral-950);
+		--text-default: var(--neutral-700);
+		--text-muted: var(--neutral-500);
+		--text-interactive: var(--primary-600);
+		
+		--border-strong: var(--neutral-600);
+		--border-default: var(--neutral-400);
+		--border-muted: var(--neutral-200);
 	}
 }
 
@@ -119,6 +153,7 @@ body {
 	font-family: var(--font-sans);
 	font-size: var(--font-md);
 	line-height: 1.45;
+	font-weight:500;
 }
 
 ::selection {
@@ -225,6 +260,7 @@ h6 {
 }
 
 p {
+	color:var(--text-default);
 	font-size: inherit;
 	font-weight: inherit;
 	letter-spacing: clamp(-0.02em, 1vw + 1rem, -0.02em);
@@ -292,6 +328,20 @@ p a {
 
 .--text-interactive {
 	color: var(--text-interactive);
+}
+
+/* Line Height */
+
+.--leading-default {
+	line-height: 1.45;
+}
+
+.--leading-tight {
+	line-height: 1.25;
+}
+
+.--leading-none {
+	line-height: 1;
 }
 
 /* Background Color */
