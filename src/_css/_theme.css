@@ -1,6 +1,4 @@
 :root {
-
-
 	/* Font Family */
 	--font-display: 'SF Pro Display', sans-serif;
 	--font-sans: 'SF Pro', sans-serif;
@@ -58,13 +56,13 @@
 	--bg-selection: var(--neutral-300);
 
 	--text-strong: var(--neutral-950);
-	--text-default: var(--neutral-700);
+	--text-default: var(--neutral-600);
 	--text-muted: var(--neutral-500);
 	--text-interactive: var(--primary-600);
 
 	--border-strong: var(--neutral-600);
 	--border-default: var(--neutral-400);
-	--border-muted: var(--neutral-200);
+	--border-muted: var(--neutral-300);
 
 	/* Light Elevation */
 	--shadow-sm: 0px 8px 12px -16px rgba(0, 0, 0, 0.5);
@@ -89,19 +87,18 @@
 	--border-muted: var(--primary-200);
 }
 
-
 .inverted {
 	/* Inverted Colors */
 	--bg-strong: black;
 	--bg-default: var(--neutral-950);
 	--bg-muted: var(--neutral-800);
 	--bg-selection: hsla(0, 0%, 100%, 0.15);
-	
+
 	--text-strong: var(--neutral-50);
 	--text-default: var(--neutral-300);
 	--text-muted: var(--neutral-400);
 	--text-interactive: var(--primary-300);
-	
+
 	--border-strong: var(--neutral-300);
 	--border-default: var(--neutral-500);
 	--border-muted: var(--neutral-800);
@@ -129,21 +126,38 @@
 		--shadow-md: 0px 12px 16px -18px rgba(0, 0, 0, 0.2);
 		--shadow-lg: 0px 24px 40px -24px rgba(0, 0, 0, 0.2);
 	}
-	
+
 	.inverted {
 		--bg-strong: var(--neutral-50);
 		--bg-default: var(--neutral-100);
 		--bg-muted: var(--neutral-200);
 		--bg-selection: var(--neutral-300);
-		
+
 		--text-strong: var(--neutral-950);
 		--text-default: var(--neutral-700);
 		--text-muted: var(--neutral-500);
 		--text-interactive: var(--primary-600);
-		
+
 		--border-strong: var(--neutral-600);
 		--border-default: var(--neutral-400);
 		--border-muted: var(--neutral-200);
+	}
+
+	.primary {
+		/* Primary Theme Colors */
+		--bg-strong: white;
+		--bg-default: var(--primary-950);
+		--bg-muted: var(--primary-800);
+		--bg-selection: var(--primary-700);
+
+		--text-strong: var(--primary-50);
+		--text-default: var(--primary-300);
+		--text-muted: var(--primary-400);
+		--text-interactive: var(--primary-200);
+
+		--border-strong: var(--primary-600);
+		--border-default: var(--primary-800);
+		--border-muted: var(--primary-950);
 	}
 }
 
@@ -153,7 +167,7 @@ body {
 	font-family: var(--font-sans);
 	font-size: var(--font-md);
 	line-height: 1.45;
-	font-weight:500;
+	font-weight: 500;
 }
 
 ::selection {
@@ -260,7 +274,7 @@ h6 {
 }
 
 p {
-	color:var(--text-default);
+	color: var(--text-default);
 	font-size: inherit;
 	font-weight: inherit;
 	letter-spacing: clamp(-0.02em, 1vw + 1rem, -0.02em);
@@ -299,7 +313,7 @@ p a {
 .--text-lg {
 	font-size: var(--font-lg);
 	line-height: 125%;
-	letter-spacing: clamp(0em, 1vw + 1rem, -0.03em);
+	letter-spacing: clamp(0em, 1vw + 1rem, -0.06em);
 }
 
 .--text-md {

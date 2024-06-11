@@ -21,10 +21,10 @@ nav,
 .nav {}
 
 .main-nav {
-	background: var(--bg-strong);
+	/* background: var(--bg-muted); */
 	border-bottom: 1px solid var(--border-muted);
 	margin-bottom: var(--spacing-md);
-	font-size:var(--font-sm);
+	font-size: var(--font-sm);
 	position: sticky;
 }
 
@@ -39,22 +39,28 @@ nav,
 }
 
 .nav-items a {
-	color: var(--text-default);
+	color: var(--text-muted);
 	text-decoration: none;
 }
 
 .nav-item {
-	border-bottom: 1px;
 	margin-bottom: -1px;
-	border-color: var(--border-strong);
 }
 
 .nav-item.--active {
 	/* border-bottom: 1px solid var(--border-default); */
 }
 
+/* Nav active item at rest */
 .nav-item.--active a {
+	color: var(--text-muted);
+	border-bottom: 2px solid var(--border-default);
+}
+
+/* Nav active item while cursor is hovering over the nav */
+.main-nav:not(:hover) .nav-item.--active a {
 	color: var(--text-strong);
+	border-bottom: 2px solid var(--border-strong);
 }
 
 .nav-item.--first {
@@ -65,20 +71,16 @@ nav,
 	margin-left: auto;
 }
 
-.nav-item.--last {
-	/* border-bottom: 1px solid var(--border-default); */
-}
-
 .nav-item-content {
 	display: inline-block;
 	padding: var(--spacing-sm) 0;
 	text-decoration: none;
 }
 
-.nav-item:not(.--active)>a.nav-item-content:hover {
-	/* border-bottom: 1px solid var(--border-strong); */
+.nav-item>a:hover {
+	border-bottom: 2px solid var(--border-strong);
 	color: var(--text-strong);
-	margin-bottom: -1px;
+	/* background: linear-gradient(180deg, transparent 70%, var(--bg-muted) 100%); */
 }
 
 .featured-items {
@@ -214,6 +216,7 @@ nav,
 }
 
 .container {
+	background: var(--bg-default);
 	position: relative;
 	width: 100%;
 	margin-left: auto;
@@ -225,7 +228,7 @@ nav,
 .events {
 	display: flex;
 	flex-wrap: wrap;
-	gap:var(--spacing-md);
+	gap: var(--spacing-md);
 }
 
 .event {
@@ -235,28 +238,28 @@ nav,
 }
 
 .event a {
-	position:relative;
+	position: relative;
 	display: flex;
 	flex-direction: column;
 	/* aspect-ratio: 4 / 3; */
 	text-decoration: none;
-	padding-top: var(--spacing-sm);
-	padding-bottom:var(--spacing-lg);
+	padding-top: var(--spacing-xs);
+	padding-bottom: var(--spacing-lg);
 }
 
 .event a:before {
-	content:"";
-	position:absolute;
-	left:0;
-	right:0;
-	top:0;
-	height:1px;
-	background:var(--border-default);
-	transform: scaleY(0.5);
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	height: 1px;
+	background: var(--border-muted);
+	transition: all 100ms ease-in-out;
 }
 
 .event a .details {
-	color:var(--text-muted);
+	color: var(--text-muted);
 	font-family: var(--font-serif);
 	font-style: italic;
 	font-size: var(--font-sm);
@@ -264,17 +267,25 @@ nav,
 
 .event a .description {
 	justify-self: first;
-	color:var(--text-default);
-	font-weight: 500;
+	color: var(--text-default);
+}
+
+.event a:hover {
+	/* background: linear-gradient(9deg, transparent 64%, var(--bg-muted) 100%); */
+}
+
+.event a:hover:before {
+	height: 2px;
+	background: var(--text-strong);
+	transform: translateY(-0.25em);
 }
 
 .event a:hover .details {
-	color:var(--text-strong);
+	color: var(--text-strong);
 }
 
 .event a:hover .description {
-	color:var(--text-strong);
-	text-decoration: underline;
+	color: var(--text-strong);
 }
 
 
