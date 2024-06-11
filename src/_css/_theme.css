@@ -1,14 +1,16 @@
 :root {
 
 
-	/* Fonts */
+	/* Font Family */
 	--font-display: 'SF Pro Display', sans-serif;
 	--font-sans: 'SF Pro', sans-serif;
 	--font-serif: 'Iowan Old Style', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+
+	/* Font Size */
 	--font-2xl: clamp(2rem, 0.313rem + 4.688vw, 2.75rem);
 	--font-xl: clamp(20px, -0.75rem + 5vw, 28px);
 	--font-lg: clamp(18px, -0.75rem + 5vw, 24px);
-	--font-md: 16px;
+	--font-md: 18px;
 	--font-sm: 14px;
 
 	/* Spacing */
@@ -20,8 +22,8 @@
 	--spacing-xl: calc(2.5 * var(--spacing));
 	--spacing-2xl: calc(5 * var(--spacing));
 	--spacing-width-xs: 16rem;
-	--spacing-width-md: 36rem;
-	--spacing-width-xl: 52rem;
+	--spacing-width-md: 45rem;
+	--spacing-width-xl: 65rem;
 
 	/* Neutral Palette */
 	--neutral-50: hsla(60, 9.1%, 97.8%, 1);
@@ -53,12 +55,12 @@
 	--bg-strong: var(--neutral-50);
 	--bg-default: var(--neutral-100);
 	--bg-muted: var(--neutral-200);
-	--bg-selection: hsla(0, 0%, 0%, 0.3);
+	--bg-selection: var(--neutral-500);
 
 	--text-strong: var(--neutral-950);
 	--text-default: var(--neutral-700);
 	--text-muted: var(--neutral-500);
-	--text-interactive: var(--neutral-900);
+	--text-interactive: var(--primary-600);
 
 	--border-strong: var(--neutral-600);
 	--border-default: var(--neutral-400);
@@ -70,18 +72,35 @@
 	--shadow-lg: 0px 24px 40px -24px rgba(0, 0, 0, 0.6);
 }
 
-@media (prefers-color-scheme: dark) {
+.primary {
+	/* Primary Theme Colors */
+	--bg-strong: var(--primary-50);
+	--bg-default: var(--primary-100);
+	--bg-muted: var(--primary-200);
+	--bg-selection: var(--primary-500);
+
+	--text-strong: var(--primary-950);
+	--text-default: var(--primary-700);
+	--text-muted: var(--primary-500);
+	--text-interactive: var(--primary-600);
+
+	--border-strong: var(--primary-600);
+	--border-default: var(--primary-400);
+	--border-muted: var(--primary-200);
+}
+
+@media (prefers-color-scheme: dask) {
 	:root {
 		/* Dark Theme Colors */
 		--bg-strong: black;
 		--bg-default: var(--neutral-950);
 		--bg-muted: var(--neutral-800);
-		--bg-selection: hsla(0, 0%, 100%, 0.3);
+		--bg-selection: hsla(0, 0%, 100%, 0.15);
 
 		--text-strong: var(--neutral-50);
 		--text-default: var(--neutral-300);
 		--text-muted: var(--neutral-400);
-		--text-interactive: var(--neutral-50);
+		--text-interactive: var(--primary-300);
 
 		--border-strong: var(--neutral-300);
 		--border-default: var(--neutral-500);
@@ -103,7 +122,8 @@ body {
 }
 
 ::selection {
-	background-color: var(--border-muted);
+	background-color: var(--bg-selection);
+	color: var(--text-strong);
 }
 
 img {
@@ -116,7 +136,7 @@ img {
 a {
 	color: var(--text-interactive);
 	text-decoration: underline;
-	text-decoration-color: var(--border-default);
+	text-decoration-color: var(--border-muted);
 	text-underline-offset: 0.125em;
 }
 
@@ -135,7 +155,7 @@ blockquote {
 
 strong,
 .--font-strong {
-	font-weight: 700;
+	font-weight: 800;
 }
 
 em,
@@ -323,6 +343,20 @@ hr,
 	box-shadow: var(--shadow-lg);
 }
 
+/* Rounded */
+
+.--rounded-sm {
+	border-radius: var(--spacing-xs);
+}
+
+.--rounded-md {
+	border-radius: var(--spacing-sm);
+}
+
+.--rounded-lg {
+	border-radius: var(--spacing-md);
+}
+
 /* Layout */
 
 .--w-xs {
@@ -344,6 +378,8 @@ hr,
 	margin-left: calc(-1 * var(--spacing-lg)) !important;
 	margin-right: calc(-1 * var(--spacing-lg)) !important;
 }
+
+/* Padding is used for utility spacing because it doesn't interfere with auto margins, which are used in other layout classes. */
 
 /* Padding Top */
 
