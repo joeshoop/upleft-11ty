@@ -256,6 +256,7 @@ nav,
 	height: 1px;
 	background: var(--border-muted);
 	transition: all 100ms ease-in-out;
+	pointer-events: none;
 }
 
 .event a .details {
