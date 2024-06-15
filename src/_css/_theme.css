@@ -2,7 +2,7 @@
 	/* Font Family */
 	--font-display: 'SF Pro Display', sans-serif;
 	--font-sans: 'SF Pro', sans-serif;
-	--font-serif: 'Source_Serif_4 variant0', sans-serif, 'Palatino Linotype', 'URW Palladio L', P052, serif;
+	--font-serif: 'Source Serif 4', 'Palatino Linotype', 'URW Palladio L', P052, serif;
 
 	/* Font Size */
 	--font-2xl: clamp(2rem, 0.313rem + 4.688vw, 2.75rem);
