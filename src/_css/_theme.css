@@ -58,7 +58,7 @@
 	--text-strong: var(--neutral-950);
 	--text-default: var(--neutral-600);
 	--text-muted: var(--neutral-500);
-	--text-interactive: var(--primary-600);
+	--text-interactive: var(--text-strong);
 
 	--border-strong: var(--neutral-600);
 	--border-default: var(--neutral-400);
@@ -80,7 +80,7 @@
 	--text-strong: var(--primary-950);
 	--text-default: var(--primary-700);
 	--text-muted: var(--primary-500);
-	--text-interactive: var(--primary-600);
+	--text-interactive: var(--text-strong);
 
 	--border-strong: var(--primary-600);
 	--border-default: var(--primary-400);
@@ -97,7 +97,7 @@
 	--text-strong: var(--neutral-50);
 	--text-default: var(--neutral-300);
 	--text-muted: var(--neutral-400);
-	--text-interactive: var(--primary-300);
+	--text-interactive: var(--text-strong);
 
 	--border-strong: var(--neutral-300);
 	--border-default: var(--neutral-500);
@@ -115,7 +115,7 @@
 		--text-strong: var(--neutral-50);
 		--text-default: var(--neutral-300);
 		--text-muted: var(--neutral-400);
-		--text-interactive: var(--primary-300);
+		--text-interactive: var(--text-strong);
 
 		--border-strong: var(--neutral-300);
 		--border-default: var(--neutral-500);
@@ -136,7 +136,7 @@
 		--text-strong: var(--neutral-950);
 		--text-default: var(--neutral-700);
 		--text-muted: var(--neutral-500);
-		--text-interactive: var(--primary-600);
+		--text-interactive: var(--text-strong);
 
 		--border-strong: var(--neutral-600);
 		--border-default: var(--neutral-400);
@@ -153,7 +153,7 @@
 		--text-strong: var(--primary-50);
 		--text-default: var(--primary-300);
 		--text-muted: var(--primary-400);
-		--text-interactive: var(--primary-200);
+		--text-interactive: var(--text-strong);
 
 		--border-strong: var(--primary-600);
 		--border-default: var(--primary-800);
@@ -185,12 +185,19 @@ img {
 a {
 	color: var(--text-interactive);
 	text-decoration: underline;
-	text-decoration-color: var(--border-muted);
+	text-decoration-color: var(--border-default);
 	text-underline-offset: 0.125em;
+	transition: color, opacity, text-decoration, text-decoration-color 67ms ease-in-out;
+}
+
+.--text-muted a {
+	opacity: 0.75;
 }
 
 a:hover {
+	color: var(--text-interactive);
 	text-decoration-color: var(--text-interactive);
+	opacity: 1;
 }
 
 blockquote {

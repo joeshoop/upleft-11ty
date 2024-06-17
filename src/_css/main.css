@@ -1,3 +1,4 @@
+@import("main.css");
 @import '_reset.css';
 @import '_photoswipe.css';
 @import '_theme.css';
@@ -23,7 +24,6 @@ nav,
 .main-nav {
 	/* background: var(--bg-muted); */
 	border-bottom: 1px solid var(--border-muted);
-	margin-bottom: var(--spacing-md);
 	font-size: var(--font-sm);
 	position: sticky;
 }
@@ -216,11 +216,14 @@ nav,
 }
 
 .container {
-	background: var(--bg-default);
 	position: relative;
 	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.fancy.container {
+	background: var(--bg-muted);
 }
 
 /* Events */
@@ -255,7 +258,7 @@ nav,
 	top: 0;
 	height: 1px;
 	background: var(--border-muted);
-	transition: all 100ms ease-in-out;
+	transition: all 67ms ease-in;
 	pointer-events: none;
 }
 
