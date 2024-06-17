@@ -1,4 +1,7 @@
 :root {
+	
+	/* Set up the base - fonts, sizing, spacing, color palettes, and elevations. */
+	
 	/* Font Family */
 	--font-display: 'SF Pro Display', sans-serif;
 	--font-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
@@ -49,28 +52,33 @@
 	--primary-900: hsla(225, 64.3%, 32.9%, 1);
 	--primary-950: hsla(225, 57%, 21%, 1);
 
-	/* Light Theme Colors */
-	--bg-strong: var(--neutral-50);
-	--bg-default: var(--neutral-100);
-	--bg-muted: var(--neutral-200);
-	--bg-selection: var(--neutral-300);
-
-	--text-strong: var(--neutral-950);
-	--text-default: var(--neutral-600);
-	--text-muted: var(--neutral-500);
-	--text-interactive: var(--text-strong);
-
-	--border-strong: var(--neutral-600);
-	--border-default: var(--neutral-400);
-	--border-muted: var(--neutral-300);
-
 	/* Light Elevation */
 	--shadow-sm: 0px 8px 12px -16px rgba(0, 0, 0, 0.5);
 	--shadow-md: 0px 8px 12px -16px rgba(0, 0, 0, 0.5);
 	--shadow-lg: 0px 16px 24px -16px rgba(0, 0, 0, 0.2);
 }
 
-.primary {
+/* Light color theme is the default, so we set it on :root. The utility class .theme-default will reset to the default theme when nested inside another themed element. */
+
+:root, .theme-default {
+	--bg-strong: var(--neutral-50);
+	--bg-default: var(--neutral-100);
+	--bg-muted: var(--neutral-200);
+	--bg-selection: var(--neutral-300);
+	
+	--text-strong: var(--neutral-950);
+	--text-default: var(--neutral-600);
+	--text-muted: var(--neutral-500);
+	--text-interactive: var(--text-strong);
+	
+	--border-strong: var(--neutral-600);
+	--border-default: var(--neutral-400);
+	--border-muted: var(--neutral-300);
+}
+
+/* A color theme using the brand primary color */
+
+.theme-primary {
 	/* Primary Theme Colors */
 	--bg-strong: white;
 	--bg-default: var(--primary-100);
@@ -87,7 +95,9 @@
 	--border-muted: var(--primary-200);
 }
 
-.inverted {
+/* Invert the colors. If media query detects light mode, this class turns an element into a dark theme. */
+
+.theme-inverted {
 	/* Inverted Colors */
 	--bg-strong: black;
 	--bg-default: var(--neutral-950);
@@ -104,8 +114,44 @@
 	--border-muted: var(--neutral-800);
 }
 
+/* Set the theme for an element to light or dark regardless of user dark mode preference. 
+
+Use sparingly - useful for setting text color on top of images or other media that doesn't change to match dark or light mode.  */
+
+.theme-light {
+	--bg-strong: var(--neutral-50);
+	--bg-default: var(--neutral-100);
+	--bg-muted: var(--neutral-200);
+	--bg-selection: var(--neutral-300);
+	
+	--text-strong: var(--neutral-950);
+	--text-default: var(--neutral-600);
+	--text-muted: var(--neutral-500);
+	--text-interactive: var(--text-strong);
+	
+	--border-strong: var(--neutral-600);
+	--border-default: var(--neutral-400);
+	--border-muted: var(--neutral-300);
+}
+
+.theme-dark {
+	--bg-strong: black;
+	--bg-default: var(--neutral-950);
+	--bg-muted: var(--neutral-800);
+	--bg-selection: hsla(0, 0%, 100%, 0.15);
+	
+	--text-strong: var(--neutral-50);
+	--text-default: var(--neutral-300);
+	--text-muted: var(--neutral-400);
+	--text-interactive: var(--text-strong);
+	
+	--border-strong: var(--neutral-300);
+	--border-default: var(--neutral-500);
+	--border-muted: var(--neutral-800);
+}
+
 @media (prefers-color-scheme: dark) {
-	:root {
+	:root, .theme-default {
 		/* Dark Theme Colors */
 		--bg-strong: black;
 		--bg-default: var(--neutral-950);
@@ -127,7 +173,8 @@
 		--shadow-lg: 0px 24px 40px -24px rgba(0, 0, 0, 0.2);
 	}
 
-	.inverted {
+	/* Dark mode inverted matches the light color theme */
+	.theme-inverted {
 		--bg-strong: var(--neutral-50);
 		--bg-default: var(--neutral-100);
 		--bg-muted: var(--neutral-200);
@@ -244,7 +291,7 @@ aside {
 	font-weight: 700;
 	font-variation-settings: "wght" 700;
 	letter-spacing: clamp(0em, 1vw + 1rem, -0.3em);
-	line-height: 1.125;
+	line-height: 1;
 }
 
 h1 {
