@@ -1,8 +1,8 @@
 :root {
 	/* Font Family */
 	--font-display: 'SF Pro Display', sans-serif;
-	--font-sans: 'SF Pro', sans-serif;
-	--font-serif: 'Source Serif 4', 'Palatino Linotype', 'URW Palladio L', P052, serif;
+	--font-sans: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+	--font-serif: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
 	/* Font Size */
 	--font-2xl: clamp(2rem, 0.313rem + 4.688vw, 2.75rem);
@@ -20,7 +20,7 @@
 	--spacing-xl: calc(2.5 * var(--spacing));
 	--spacing-2xl: calc(5 * var(--spacing));
 	--spacing-width-xs: 16rem;
-	--spacing-width-md: 45rem;
+	--spacing-width-md: 39rem;
 	--spacing-width-xl: 65rem;
 
 	/* Neutral Palette */
